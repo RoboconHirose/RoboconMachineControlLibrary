@@ -1,5 +1,5 @@
 #include <iostream>
-#include "VectorCtrl.hpp"
+#include "src/VectorCtrl.hpp"
 
 int main() {
 	double power[4];
