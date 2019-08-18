@@ -151,14 +151,14 @@
 - double speedFact
 - double *wheelSpeed &lt;- ホイールの数だけ生成
 - Vector *vector
-- WheelAtter *wheelAttr</y:AttributeLabel>
+- WheelAttr *wheelAttr</y:AttributeLabel>
                 <y:MethodLabel xml:space="preserve">+ MecanumWheelController(int wheelNum, double limitWheelSpeed, double offset);
 + ~MecanumWheelController(); &lt;- メモリ開放
 + void setWheelAttr(WheelAttr *wheelAttr);
 + void setWheelAttr(WheelAttr wheelAttr, int num);
 + void setLimitWheelSpeed(double limitWheelSpeed);
-+ void calcWheelSpeed(MoveVector &amp;moveVec);
-+ double getWhleelSpeed(int num);</y:MethodLabel>
++ void calcurateWheelSpeed(MoveVector &amp;moveVec);
++ double getWheelSpeed(int num);</y:MethodLabel>
               </y:UML>
             </y:UMLClassNode>
           </data>
