@@ -134,10 +134,9 @@ void ctrl::VectorCalculator::calculateVector(ctrl::Vector &out, ctrl::MoveVector
 		else {
 			// オフセットがある超信地旋回は、旋回中心と基準位置が重ならないので緩旋回処理になる。
 			// 旋回中心を決め、各ホイールの移動ベクトル個別に計算
-			// 旋回半径を求める（WHEEL_DISTは中心からホイールまでの距離）
+			// 旋回半径を求める（wheelAttr.getWheelDist()は中心からホイールまでの距離）
 			// 負数だと右旋回
 			// steerRは基準位置ベースの旋回半径、turnRは車両中心ベースの旋回半径
-
 			if (std::fabs(moveVector.getSteer()) > 0.95) { // フルステアでは計算がエラーになるので、例外処理
 				steerR = 0;
 			} else {
@@ -185,12 +184,10 @@ void ctrl::VectorCalculator::calculateVector(ctrl::Vector &out, ctrl::MoveVector
 
 				} else if (moveVector.getSteer() < 0) { // 旋回半径が極めて小さいので超信地旋回（右旋回）
 					// 本来はturnRの正負で速度の正負が決まるが、0なのでsteerの正負を使う
-					//            Serial.println("SpinR");
 					// 右旋回なので速度を負数にする
 					out.setMagnitude(-moveVector.getMagnitude());
 
 				} else { // 左超信地旋回
-					//            Serial.println("SpinL");
 					out.setMagnitude(moveVector.getMagnitude());
 
 				}

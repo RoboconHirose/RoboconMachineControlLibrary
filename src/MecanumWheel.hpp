@@ -5,11 +5,38 @@
 #ifndef VECTORCTRL_MECANUMWHEEL_HPP
 #define VECTORCTRL_MECANUMWHEEL_HPP
 
+#include "VectorCtrl.hpp"
+#include <cmath>
 
-class MecanumWheel {
-public:
-private:
-};
+namespace ctrl {
+	class MecanumWheelController final : private VectorCalculator {
+	public:
+		explicit MecanumWheelController(int wheelNum, double limitWheelSpeed, double offset = 0);
 
+		~MecanumWheelController(); // メモリ開放
+
+		void setWheelAttr(WheelAttr *wheelAttr);
+
+		void setWheelAttr(WheelAttr wheelAttr, int num);
+
+		void setLimitWheelSpeed(double limitWheelSpeed);
+
+		void setOffset(double offset) override;
+
+		double getWheelSpeed(int num);
+
+		void calcurateWheelSpeed(MoveVector &moveVec);
+
+	private:
+		//配列の長さを取得するテンプレート関数 [xx]に入れたxxが返ってくる
+		const int WHEEL_NUM;
+		double limitWheelSpeed;
+		double maxWheelSpeed;
+		double speedFact;
+		double *wheelSpeed; // ホイールの数だけ生成
+		ctrl::Vector *vector;
+		ctrl::WheelAttr *wheelAttr;
+	};
+}
 
 #endif //VECTORCTRL_MECANUMWHEEL_HPP
