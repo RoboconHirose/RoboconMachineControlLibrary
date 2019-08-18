@@ -12,15 +12,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f670f68-60f8-48f1-a3de-757af24ff65e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/MecanumWheel.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MecanumWheel.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Vector.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Vector.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UML/MecanumWheelController.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/UML/vector.graphml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/VectorCtrl.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/VectorCtrl.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VectorCtrl.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/VectorCtrl.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MecanumWheel.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/MecanumWheel.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MecanumWheel.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/MecanumWheel.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Test.hpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vector.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vector.hpp" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,21 +41,28 @@
             <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="95">
-                  <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+                  <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/main.cpp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="323">
+                  <caret line="17" column="103" selection-start-line="17" selection-start-column="103" selection-end-line="17" selection-end-column="103" />
+                  <folding>
+                    <element signature="e#0#19#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/MecanumWheel.hpp">
-              <provider selected="true" editor-type-id="text-editor" />
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/Vector.hpp">
+            <entry file="file://$PROJECT_DIR$/src/VectorCtrl.hpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="133">
-                  <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+                <state relative-caret-position="589">
+                  <caret line="46" column="56" selection-start-line="46" selection-start-column="56" selection-end-line="46" selection-end-column="56" />
                 </state>
               </provider>
             </entry>
@@ -60,21 +70,12 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/MecanumWheel.cpp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="57">
-                  <caret line="3" selection-start-line="3" selection-end-line="3" />
-                </state>
-              </provider>
-            </entry>
-          </file>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/Vector.cpp">
+            <entry file="file://$PROJECT_DIR$/src/VectorCtrl.cpp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="95">
-                  <caret line="5" selection-start-line="5" selection-end-line="5" />
+                <state relative-caret-position="394">
+                  <caret line="34" column="20" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
                 </state>
               </provider>
             </entry>
@@ -82,6 +83,14 @@
         </leaf>
       </split-second>
     </splitter>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>float</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>double</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -97,10 +106,19 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/VectorCtrl.cpp" />
         <option value="$PROJECT_DIR$/VectorCtrl.hpp" />
+        <option value="$PROJECT_DIR$/src/test.cpp" />
+        <option value="$PROJECT_DIR$/src/test.hpp" />
+        <option value="$PROJECT_DIR$/src/Test.cpp" />
+        <option value="$PROJECT_DIR$/src/Test.hpp" />
+        <option value="$PROJECT_DIR$/src/MecanumWheel.hpp" />
+        <option value="$PROJECT_DIR$/src/MecanumWheel.cpp" />
+        <option value="$PROJECT_DIR$/src/Vector.hpp" />
+        <option value="$PROJECT_DIR$/src/VectorData.hpp" />
+        <option value="$PROJECT_DIR$/src/Vector.cpp" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/src/VectorCtrl.hpp" />
         <option value="$PROJECT_DIR$/src/VectorCtrl.cpp" />
         <option value="$PROJECT_DIR$/main.cpp" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/src/Vector.hpp" />
       </list>
     </option>
   </component>
@@ -112,10 +130,10 @@
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="757" />
-    <option name="y" value="20" />
-    <option name="width" value="1294" />
-    <option name="height" value="1353" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="2576" />
+    <option name="height" value="1416" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -123,6 +141,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -139,7 +158,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -147,10 +165,11 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Colors" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Mayoi\CLionProjects\VectorCtrl\UML" />
       <recent name="C:\Users\Mayoi\CLionProjects\VectorCtrl\src" />
     </key>
   </component>
@@ -187,12 +206,13 @@
       <workItem from="1565953533929" duration="639000" />
       <workItem from="1566041950361" duration="3836000" />
       <workItem from="1566052754854" duration="266000" />
-      <workItem from="1566053251483" duration="3241000" />
+      <workItem from="1566053251483" duration="9466000" />
+      <workItem from="1566102661006" duration="3525000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17389000" />
+    <option name="totallyTimeSpent" value="27139000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -207,22 +227,22 @@
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.34069768" visible="true" weight="0.10691574" />
-      <window_info id="Structure" order="1" sideWeight="0.65930235" side_tool="true" visible="true" weight="0.10691574" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.34069768" visible="true" weight="0.10850556" />
+      <window_info id="Structure" order="1" sideWeight="0.65930235" side_tool="true" visible="true" weight="0.10850556" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.69515103" weight="0.19953234" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49602544" weight="0.32969603" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.69435614" weight="0.19953234" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.5071542" weight="0.3460639" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32969603" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49960256" weight="0.32969603" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info anchor="bottom" id="Messages" order="8" sideWeight="0.49483308" weight="0.32969603" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4972178" weight="0.32969603" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5019873" side_tool="true" visible="true" weight="0.32969603" />
-      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.49801272" visible="true" weight="0.32969603" />
-      <window_info anchor="bottom" id="CMake" order="12" sideWeight="0.49920508" weight="0.32969603" />
+      <window_info active="true" anchor="bottom" id="Messages" order="8" sideWeight="0.4880763" visible="true" weight="0.32969603" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49602544" weight="0.32969603" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5119237" side_tool="true" visible="true" weight="0.32969603" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.49682036" weight="0.32969603" />
+      <window_info anchor="bottom" id="CMake" order="12" sideWeight="0.49880764" weight="0.32969603" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.11565978" />
@@ -273,61 +293,68 @@
     </option>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/VectorCtrl.cpp" />
+    <entry file="file://$PROJECT_DIR$/src/VectorCtrl.hpp" />
+    <entry file="file://$PROJECT_DIR$/src/Test.cpp" />
+    <entry file="file://$PROJECT_DIR$/src/Test.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="24" column="8" lean-forward="true" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UML/vector.graphml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MecanumWheel.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="18" lean-forward="true" selection-start-column="18" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/VectorCtrl.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#2#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/VectorCtrl.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <caret column="18" selection-start-column="18" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
-          <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+          <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MecanumWheel.hpp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/MecanumWheel.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="190">
+          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Vector.cpp">
+    <entry file="file://$PROJECT_DIR$/src/VectorCtrl.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="589">
+          <caret line="46" column="56" selection-start-line="46" selection-start-column="56" selection-end-line="46" selection-end-column="56" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Vector.hpp">
+    <entry file="file://$PROJECT_DIR$/src/VectorCtrl.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="16" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="16" />
+        <state relative-caret-position="394">
+          <caret line="34" column="20" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="17" column="103" selection-start-line="17" selection-start-column="103" selection-end-line="17" selection-end-column="103" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

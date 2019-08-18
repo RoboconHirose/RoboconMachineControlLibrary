@@ -7,7 +7,8 @@
 
 
 class MecanumWheel {
-
+public:
+private:
 };
 
 
