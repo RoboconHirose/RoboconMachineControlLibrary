@@ -57,7 +57,7 @@
 - double magnitude &lt;- 長さ</y:AttributeLabel>
                 <y:MethodLabel xml:space="preserve">+ Vector(); &lt;- デフォルトコンストラクタ
 + virtual double getAngle(); &lt;- アクセサー
-+ virtual double getMagnitude()
++ virtual double getMagnitude();
 # virtual void setAngle(double angle);
 # virtual void setMagnitude(double magnitude);</y:MethodLabel>
               </y:UML>
@@ -68,7 +68,7 @@
           <data key="d4" xml:space="preserve"/>
           <data key="d6">
             <y:UMLClassNode>
-              <y:Geometry height="220.39999999999998" width="405.39999999999986" x="-1640.6999999999994" y="-490.10000000000025"/>
+              <y:Geometry height="241.39999999999998" width="405.39999999999986" x="-1640.6999999999994" y="-490.10000000000025"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="65.38818359375" x="170.00590820312493" xml:space="preserve" y="3.0">WheelAttr<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
@@ -76,7 +76,8 @@
                 <y:AttributeLabel xml:space="preserve">- double x &lt;- (ホイールベース / 2) mm
 - double y &lt;-  (トレッド / 2) mm
 - double angle &lt;- ホイールの傾き(0～π)</y:AttributeLabel>
-                <y:MethodLabel xml:space="preserve">+ double getX();
+                <y:MethodLabel xml:space="preserve">+ WheelAttr();
++ double getX();
 + double getY(); 
 + double getAngle();
 + double getWheelDist(); &lt;- ホイールの軸から車両中心までの距離を返す
@@ -109,7 +110,7 @@
 - double offset &lt;-  車両原点の調整(前+, 後-)</y:AttributeLabel>
                 <y:MethodLabel xml:space="preserve">+ VectorCalculator(); &lt;- デフォルトコンストラクタ
 + VectorCalculator(double offset);
-+ void calcVec(Vector &amp;out, MoveVector &amp;moveVector, WheelAttr &amp;wheelAter);
++ void calcVec(Vector &amp;out, MoveVector &amp;moveVector, WheelAttr &amp;wheelAttr);
 + void setOffset(double offset);</y:MethodLabel>
               </y:UML>
             </y:UMLClassNode>
@@ -125,9 +126,9 @@
               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="77.68994140625" x="189.0550292968751" xml:space="preserve" y="3.0">MoveVector<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
               <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="true">
                 <y:AttributeLabel xml:space="preserve">- double steer &lt;- 左+, 右-</y:AttributeLabel>
-                <y:MethodLabel xml:space="preserve">+ Vector(); &lt;- デフォルトコンストラクタ
+                <y:MethodLabel xml:space="preserve">+ MoveVector(); &lt;- デフォルトコンストラクタ
 + double getAngle(); &lt;- アクセサーのオーバーロード(セットできる値の制限)
-+ double getMagnitude()
++ double getMagnitude();
 + double getSteer();
 + void setAngle(double angle); &lt;- ラジアン
 + void setMagnitude(double magnitude);　&lt;- (0.0～1.4)の範囲
@@ -151,13 +152,13 @@
 - double speedFact
 - double *wheelSpeed &lt;- ホイールの数だけ生成
 - Vector *vector
-- WheelAtter *wheelAtter</y:AttributeLabel>
+- WheelAtter *wheelAttr</y:AttributeLabel>
                 <y:MethodLabel xml:space="preserve">+ MecanumWheelController(int wheelNum, double limitWheelSpeed);
 + ~MecanumWheelController(); &lt;- メモリ開放
-+ void setWheelAtter(WheelAtter *wheelAtter);
-+ void setWheelAtter(WheelAtter wheelAtter, int num);
++ void setWheelAttr(WheelAttr *wheelAttr);
++ void setWheelAttr(WheelAttr wheelAttr, int num);
 + void setLimitWheelSpeed(double limitWheelSpeed);
-+ void calcWheelSpeed(MoveVector &amp;moveVec)
++ void calcWheelSpeed(MoveVector &amp;moveVec);
 + double getWhleelSpeed(int num);</y:MethodLabel>
               </y:UML>
             </y:UMLClassNode>
@@ -318,7 +319,7 @@
       <data key="d8" xml:space="preserve"/>
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="-215.4422225405911" sy="56.26400000000035" tx="146.59400000000005" ty="-68.33599999999905">
+          <y:Path sx="-215.4422225405911" sy="56.26400000000035" tx="146.59400000000005" ty="-74.84714337567952">
             <y:Point x="-1156.2059999999997" y="-833.8359999999993"/>
             <y:Point x="-1158.6059999999998" y="-447.43599999999935"/>
           </y:Path>
@@ -332,7 +333,7 @@
       <data key="d8" xml:space="preserve"/>
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="-174.40000000000043" sy="55.2000000000001" tx="181.79399999999987" ty="51.664000000000954"/>
+          <y:Path sx="205.2572718832114" sy="73.05262572523571" tx="181.79399999999987" ty="56.58661343012808"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="white_diamond" target="none"/>
           <y:BendStyle smoothed="false"/>
