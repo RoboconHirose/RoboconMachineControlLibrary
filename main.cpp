@@ -43,8 +43,8 @@ int main(){
 
 	//-------------------------------------------------------------
 	// ctrl::VectorCalculator debug
-	/*
-	ctrl::VectorCalculator vc(0.0);
+
+	ctrl::VectorCalculator vc;
 	ctrl::Vector v;
 	ctrl::MoveVector mv;
 	ctrl::WheelAttr va[2];
@@ -66,6 +66,6 @@ int main(){
 		vc.calculateVector(v,mv,va[1]);
 		std::cout << "[1]mag:" << v.getMagnitude() << "| angl:" << v.getAngle() << "\n";
 	}
-	*/
+
 	return 0;
 }

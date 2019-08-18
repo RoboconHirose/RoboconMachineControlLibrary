@@ -40,19 +40,19 @@ namespace ctrl {
 
 	//-------------------------------------------------
 	// ctrl::MoveVector class
-	class MoveVector : Vector {
+	class MoveVector final : private Vector {
 	public:
 		MoveVector();
 
-		double getAngle();
+		double getAngle() override;
 
-		double getMagnitude();
+		double getMagnitude() override;
 
 		double getSteer();
 
-		void setAngle(double angle);
+		void setAngle(double angle) override;
 
-		void setMagnitude(double magnitude); // (0~1.4)の範囲で指定
+		void setMagnitude(double magnitude) override; // (0~1.4)の範囲で指定
 
 		void setSteer(double steer); // (-1.0~1.0)の範囲で指定
 
@@ -92,11 +92,10 @@ namespace ctrl {
 	public:
 		VectorCalculator();
 
-		VectorCalculator(double offset);
+		explicit VectorCalculator(double offset);
 
 		virtual void setOffset(double offset);
 
-	protected: // debugするときコメントアウトすること
 		void calculateVector(Vector &out, MoveVector &moveVector, WheelAttr &wheelAttr);
 
 	private:
