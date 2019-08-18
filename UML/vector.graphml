@@ -110,7 +110,7 @@
                 <y:MethodLabel xml:space="preserve">+ VectorCalculator(); &lt;- デフォルトコンストラクタ
 + VectorCalculator(double offset);
 + virtual void setOffset(double offset);
-# void calculateVector(Vector &amp;out, MoveVector &amp;moveVector, WheelAttr &amp;wheelAttr);</y:MethodLabel>
++ void calculateVector(Vector &amp;out, MoveVector &amp;moveVector, WheelAttr &amp;wheelAttr);</y:MethodLabel>
               </y:UML>
             </y:UMLClassNode>
           </data>
