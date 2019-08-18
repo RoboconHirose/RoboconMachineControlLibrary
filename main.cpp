@@ -41,5 +41,31 @@ int main(){
 	}
 	*/
 
+	//-------------------------------------------------------------
+	// ctrl::VectorCalculator debug
+	/*
+	ctrl::VectorCalculator vc(0.0);
+	ctrl::Vector v;
+	ctrl::MoveVector mv;
+	ctrl::WheelAttr va[2];
+
+	va[0].setX(50);
+	va[0].setY(50);
+	va[0].setAngle(M_PI_4);
+
+	va[1].setX(-50);
+	va[1].setY(-50);
+	va[1].setAngle(M_PI_4);
+
+	for (int i = 0; i < 20; ++i) {
+		mv.setMagnitude(i / 10.0);
+		mv.setAngle(M_PI_4);
+		mv.setSteer(i/20.0);
+		vc.calculateVector(v,mv,va[0]);
+		std::cout << "[0]mag:" << v.getMagnitude() << "| angl:" << v.getAngle() << "\n";
+		vc.calculateVector(v,mv,va[1]);
+		std::cout << "[1]mag:" << v.getMagnitude() << "| angl:" << v.getAngle() << "\n";
+	}
+	*/
 	return 0;
 }
