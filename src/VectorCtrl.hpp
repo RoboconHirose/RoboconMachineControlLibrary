@@ -55,6 +55,30 @@ namespace ctrl {
 	private:
 		double steer;
 	};
+
+	class WheelAttr {
+	public:
+		WheelAttr();
+
+		double getX();
+
+		double getY();
+
+		double getAngle();
+
+		double getWheelDist();
+
+		void setX(double x);
+
+		void setY(double y);
+
+		void setAngle(double angle);
+
+	private:
+		double x;
+		double y;
+		double angle;
+	};
 }
 
 #endif //VECTORCTRL_VECTOR_HPP

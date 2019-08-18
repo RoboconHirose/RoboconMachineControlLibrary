@@ -62,3 +62,42 @@ void ctrl::MoveVector::setSteer(double steer) {
 		this->steer = 0.0;
 	}
 }
+
+//----------------------------------------------------------
+// ctrl::WheelAttr
+
+ctrl::WheelAttr::WheelAttr() : x(0.0), y(0.0), angle(0.0) {
+
+}
+
+double ctrl::WheelAttr::getX() {
+	return this->x;
+}
+
+double ctrl::WheelAttr::getY() {
+	return this->y;
+}
+
+double ctrl::WheelAttr::getAngle() {
+	return this->angle;
+}
+
+double ctrl::WheelAttr::getWheelDist() {
+	return std::hypot(this->x, this->y);
+}
+
+void ctrl::WheelAttr::setX(double x) {
+	this->x = x;
+}
+
+void ctrl::WheelAttr::setY(double y) {
+	this->y = y;
+}
+
+void ctrl::WheelAttr::setAngle(double angle) {
+	if (angle >= 0.0 && angle <= M_PI) {
+		this->angle = angle;
+	}else{
+		this->angle = 0.0;
+	}
+}

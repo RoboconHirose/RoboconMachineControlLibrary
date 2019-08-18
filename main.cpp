@@ -26,5 +26,20 @@ int main(){
 	}
 	 */
 
+	//-------------------------------------------------------------
+	// ctrl::WheelAttr debug <- O
+	/*
+	ctrl::WheelAttr wheelAttr;
+
+	for (int i = -40; i < 40; ++i) {
+		wheelAttr.setAngle(i / 10.0);
+		wheelAttr.setX(i / 10.0);
+		wheelAttr.setY(i / 10.0);
+
+		std::cout << "|" << wheelAttr.getX() << "|" << wheelAttr.getY() << "|" << wheelAttr.getAngle() << "|"
+		          << wheelAttr.getWheelDist() << "|\n";
+	}
+	*/
+
 	return 0;
 }
