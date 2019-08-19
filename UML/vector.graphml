@@ -155,9 +155,9 @@
                 <y:MethodLabel xml:space="preserve">+ MecanumWheelController(int wheelNum, double limitWheelSpeed, double offset);
 + ~MecanumWheelController(); &lt;- メモリ開放
 + void setWheelAttr(WheelAttr *wheelAttr);
-+ void setWheelAttr(WheelAttr wheelAttr, int num);
++ void setWheelAttr(double x, double y, double angle, int num);
 + void setLimitWheelSpeed(double limitWheelSpeed);
-+ void calcurateWheelSpeed(MoveVector &amp;moveVec);
++ void calcWheelSpeed(MoveVector &amp;moveVector);
 + double getWheelSpeed(int num);</y:MethodLabel>
               </y:UML>
             </y:UMLClassNode>

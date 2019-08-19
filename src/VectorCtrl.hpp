@@ -13,10 +13,14 @@
 */
 
 #define STEER_LIMIT 1.0 // ステアリングの最大値, 処理的にこれが最大
-#define MAGNITUDE_LIMIT 1.4 // たぶん大きくしても大丈夫
+#define MAGNITUDE_LIMIT std::sqrt(1.0+1.0)// 入力が
 #define EPSILON 0.05 // 浮動小数点の誤差の許容できる大きさ
 
 namespace ctrl {
+	// ---------------------------------------------
+	// 正規化 値を-1から1の範囲に変換する
+
+	extern double normalize(double target, double min, double max, double center);
 
 	//-------------------------------------------------
 	// ctrl::Vector class
@@ -32,6 +36,8 @@ namespace ctrl {
 
 		virtual void setMagnitude(double magnitude);
 
+		virtual void setXY(double x, double y);
+
 	private:
 		double angle;   // ラジアン
 		double magnitude; // ベクトルの長さ
@@ -40,7 +46,7 @@ namespace ctrl {
 
 	//-------------------------------------------------
 	// ctrl::MoveVector class
-	class MoveVector final : private Vector {
+	class MoveVector final : private ctrl::Vector {
 	public:
 		MoveVector();
 
@@ -53,6 +59,8 @@ namespace ctrl {
 		void setAngle(double angle) override;
 
 		void setMagnitude(double magnitude) override; // (0~1.4)の範囲で指定
+
+		void setXY(double x, double y) override; // スティックx, yを-1.0～1.0の範囲で入力
 
 		void setSteer(double steer); // (-1.0~1.0)の範囲で指定
 
@@ -96,7 +104,7 @@ namespace ctrl {
 
 		virtual void setOffset(double offset);
 
-		void calculateVector(Vector &out, MoveVector &moveVector, WheelAttr &wheelAttr);
+		void calculateVector(ctrl::Vector &out, ctrl::MoveVector &moveVector, ctrl::WheelAttr &wheelAttr);
 
 	private:
 		double steerR;  // 基準位置からの旋回半径

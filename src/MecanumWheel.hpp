@@ -17,7 +17,7 @@ namespace ctrl {
 
 		void setWheelAttr(WheelAttr *wheelAttr);
 
-		void setWheelAttr(WheelAttr wheelAttr, int num);
+		void setWheelAttr(double x, double y, double angle, int num);
 
 		void setLimitWheelSpeed(double limitWheelSpeed);
 
@@ -25,7 +25,7 @@ namespace ctrl {
 
 		double getWheelSpeed(int num);
 
-		void calcurateWheelSpeed(MoveVector &moveVec);
+		void calcWheelSpeed(MoveVector &moveVector);
 
 	private:
 		//配列の長さを取得するテンプレート関数 [xx]に入れたxxが返ってくる

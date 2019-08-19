@@ -4,6 +4,19 @@
 
 #include "VectorCtrl.hpp"
 
+// ---------------------------------------------
+// 正規化
+double ctrl::normalize(double target, double min, double max, double center) {
+	double val;
+
+	if (target >= center) {
+		val = (target - center) / (max - center);
+	} else {
+		val = -((center - target) / (center - min));
+	}
+	return val;
+}
+
 //----------------------------------------------------
 // ctrl::Vectorの実装
 ctrl::Vector::Vector() : angle(0.0), magnitude(0.0) {
@@ -23,6 +36,12 @@ void ctrl::Vector::setAngle(double angle) {
 
 void ctrl::Vector::setMagnitude(double magnitude) {
 	this->magnitude = magnitude;
+}
+
+
+void ctrl::Vector::setXY(double x, double y) {
+	this->magnitude = std::hypot(x, y);
+	this->angle = atan2(y, x);
 }
 
 //----------------------------------------------------
@@ -52,6 +71,14 @@ void ctrl::MoveVector::setMagnitude(double magnitude) {
 		Vector::setMagnitude(magnitude);
 	} else {
 		Vector::setMagnitude(0.0);
+	}
+}
+
+void ctrl::MoveVector::setXY(double x, double y) {
+	if (std::hypot(x, y) > EPSILON) {
+		ctrl::Vector::setXY(-x, y);
+	} else {
+		ctrl::Vector::setXY(0, 0);
 	}
 }
 

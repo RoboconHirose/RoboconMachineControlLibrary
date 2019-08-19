@@ -1,8 +1,9 @@
 #include <iostream>
 #include <cmath>
 #include "src/VectorCtrl.hpp"
+#include "src/MecanumWheel.hpp"
 
-int main(){
+int main() {
 
 	//------------------------------------------------------------
 	// ctrl::Vector debug <- O
@@ -44,6 +45,7 @@ int main(){
 	//-------------------------------------------------------------
 	// ctrl::VectorCalculator debug
 
+	/*
 	ctrl::VectorCalculator vc;
 	ctrl::Vector v;
 	ctrl::MoveVector mv;
@@ -66,6 +68,10 @@ int main(){
 		vc.calculateVector(v,mv,va[1]);
 		std::cout << "[1]mag:" << v.getMagnitude() << "| angl:" << v.getAngle() << "\n";
 	}
+	 */
+
+	//-------------------------------------------------------------
+	// ctrl::MecanumWheelController
 
 	return 0;
 }
