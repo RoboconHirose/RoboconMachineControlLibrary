@@ -41,7 +41,7 @@ void ctrl::MecanumWheelController::setOffset(double offset) {
 	ctrl::VectorCalculator::setOffset(offset);
 }
 
-void ctrl::MecanumWheelController::calcWheelSpeed(ctrl::MoveVector &moveVector) {
+void ctrl::MecanumWheelController::calcWheelSpeed(ctrl::VectorMove &moveVector) {
 	// ホイール属性から各ホイールの駆動速度を算出
 	this->maxWheelSpeed = -1; // 最大速度の絶対値を記録
 

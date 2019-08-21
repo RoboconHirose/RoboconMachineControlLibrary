@@ -25,7 +25,7 @@ namespace ctrl {
 
 		double getWheelSpeed(int num);
 
-		void calcWheelSpeed(MoveVector &moveVector);
+		void calcWheelSpeed(VectorMove &moveVector);
 
 	private:
 		//配列の長さを取得するテンプレート関数 [xx]に入れたxxが返ってくる

@@ -13,17 +13,21 @@
 */
 
 #define STEER_LIMIT 1.0 // ステアリングの最大値, 処理的にこれが最大
-#define MAGNITUDE_LIMIT std::sqrt(1.0+1.0)// 入力が
+#define SQUARE_ROOT_2 1.41421356 // √2
 #define EPSILON 0.05 // 浮動小数点の誤差の許容できる大きさ
 
 namespace ctrl {
 	// ---------------------------------------------
+	//
 	// 正規化 値を-1から1の範囲に変換する
+	//
 
 	extern double normalize(double target, double min, double max, double center);
 
 	//-------------------------------------------------
+	//
 	// ctrl::Vector class
+	//
 	class Vector {
 	public:
 		Vector();
@@ -36,8 +40,6 @@ namespace ctrl {
 
 		virtual void setMagnitude(double magnitude);
 
-		virtual void setXY(double x, double y);
-
 	private:
 		double angle;   // ラジアン
 		double magnitude; // ベクトルの長さ
@@ -45,10 +47,14 @@ namespace ctrl {
 	};
 
 	//-------------------------------------------------
-	// ctrl::MoveVector class
-	class MoveVector final : private ctrl::Vector {
+	//
+	// ctrl::VectorMove class
+	//
+	class VectorMove final : private ctrl::Vector {
 	public:
-		MoveVector();
+	    // 入力データは(-1.0〜1.0に正規化すること) / 座標系を変換するプログラムを入れておく
+
+		VectorMove();
 
 		double getAngle() override;
 
@@ -60,7 +66,7 @@ namespace ctrl {
 
 		void setMagnitude(double magnitude) override; // (0~1.4)の範囲で指定
 
-		void setXY(double x, double y) override; // スティックx, yを-1.0～1.0の範囲で入力
+		void setXY(double x, double y); // スティックx, yを-1.0～1.0の範囲で入力
 
 		void setSteer(double steer); // (-1.0~1.0)の範囲で指定
 
@@ -69,7 +75,9 @@ namespace ctrl {
 	};
 
 	//-------------------------------------------------
+	//
 	// ctrl::WheelAttr class
+	//
 	class WheelAttr {
 	public:
 		WheelAttr();
@@ -95,7 +103,9 @@ namespace ctrl {
 	};
 
 	//-------------------------------------------------
+	//
 	// ctrl::VectorCalculator class
+	//
 	class VectorCalculator {
 	public:
 		VectorCalculator();
@@ -104,7 +114,7 @@ namespace ctrl {
 
 		virtual void setOffset(double offset);
 
-		void calculateVector(ctrl::Vector &out, ctrl::MoveVector &moveVector, ctrl::WheelAttr &wheelAttr);
+		void calculateVector(ctrl::Vector &vecWheel, ctrl::VectorMove &vecMove, ctrl::WheelAttr &wheelAttr);
 
 	private:
 		double steerR;  // 基準位置からの旋回半径

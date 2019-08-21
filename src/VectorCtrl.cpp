@@ -38,51 +38,42 @@ void ctrl::Vector::setMagnitude(double magnitude) {
 	this->magnitude = magnitude;
 }
 
-
-void ctrl::Vector::setXY(double x, double y) {
-	this->magnitude = std::hypot(x, y);
-	this->angle = atan2(y, x);
-}
-
 //----------------------------------------------------
 // ctrl::MoveVectorの実装
-ctrl::MoveVector::MoveVector() : Vector(), steer(0.0) {
+ctrl::VectorMove::VectorMove() : Vector(), steer(0.0) {
 
 }
 
-double ctrl::MoveVector::getAngle() {
+double ctrl::VectorMove::getAngle() {
 	return Vector::getAngle();
 }
 
-double ctrl::MoveVector::getMagnitude() {
+double ctrl::VectorMove::getMagnitude() {
 	return Vector::getMagnitude();
 }
 
-double ctrl::MoveVector::getSteer() {
+double ctrl::VectorMove::getSteer() {
 	return this->steer;
 }
 
-void ctrl::MoveVector::setAngle(double angle) {
+void ctrl::VectorMove::setAngle(double angle) {
 	Vector::setAngle(angle);
 }
 
-void ctrl::MoveVector::setMagnitude(double magnitude) {
-	if (magnitude >= 0.0 && magnitude <= MAGNITUDE_LIMIT) {
+void ctrl::VectorMove::setMagnitude(double magnitude) {
+	if (magnitude >= 0.0 && magnitude <= SQUARE_ROOT_2) {
 		Vector::setMagnitude(magnitude);
 	} else {
 		Vector::setMagnitude(0.0);
 	}
 }
 
-void ctrl::MoveVector::setXY(double x, double y) {
-	if (std::hypot(x, y) > EPSILON) {
-		ctrl::Vector::setXY(-x, y);
-	} else {
-		ctrl::Vector::setXY(0, 0);
-	}
+void ctrl::VectorMove::setXY(double x, double y) {
+    VectorMove::setMagnitude(std::hypot(x, y));
+    VectorMove::setAngle(atan2(y, x));
 }
 
-void ctrl::MoveVector::setSteer(double steer) {
+void ctrl::VectorMove::setSteer(double steer) {
 	if (fabs(steer) <= STEER_LIMIT) {
 		this->steer = steer;
 	} else {
@@ -146,16 +137,16 @@ void ctrl::VectorCalculator::setOffset(double offset) {
 	this->offset = offset;
 }
 
-void ctrl::VectorCalculator::calculateVector(ctrl::Vector &out, ctrl::MoveVector &moveVector,
+void ctrl::VectorCalculator::calculateVector(ctrl::Vector &vecWheel, ctrl::VectorMove &vecMove,
                                              ctrl::WheelAttr &wheelAttr) {
 	//動作の場合分け
 	// スティックの操作あり
-	if (moveVector.getMagnitude() > EPSILON) {
+	if (vecMove.getMagnitude() > EPSILON) {
 		// 回転操作なし
-		if (std::fabs(moveVector.getSteer()) < EPSILON) {
+		if (std::fabs(vecMove.getSteer()) < EPSILON) {
 			// 直進
-			out.setMagnitude(moveVector.getMagnitude());
-			out.setAngle(moveVector.getAngle());
+			vecWheel.setMagnitude(vecMove.getMagnitude());
+			vecWheel.setAngle(vecMove.getAngle());
 
 		} // 旋回	(緩旋回と超信地旋回)
 		else {
@@ -164,19 +155,19 @@ void ctrl::VectorCalculator::calculateVector(ctrl::Vector &out, ctrl::MoveVector
 			// 旋回半径を求める（wheelAttr.getWheelDist()は中心からホイールまでの距離）
 			// 負数だと右旋回
 			// steerRは基準位置ベースの旋回半径、turnRは車両中心ベースの旋回半径
-			if (std::fabs(moveVector.getSteer()) > 0.95) { // フルステアでは計算がエラーになるので、例外処理
+			if (std::fabs(vecMove.getSteer()) > 0.95) { // フルステアでは計算がエラーになるので、例外処理
 				steerR = 0;
 			} else {
-				steerR = wheelAttr.getWheelDist() / std::tan(moveVector.getSteer() * M_PI_2);
+				steerR = wheelAttr.getWheelDist() / std::tan(vecMove.getSteer() * M_PI_2);
 			}
 			// 旋回中心が位置する直線の角度
-			cAngle = moveVector.getAngle() + M_PI_2;
+			cAngle = vecMove.getAngle() + M_PI_2;
 			// 旋回中心の座標を求める
 			cx = steerR * std::cos(cAngle) + offset;
 			cy = steerR * std::sin(cAngle);
 			// 車両原点での旋回半径
 			turnR = std::sqrt(cx * cx + cy * cy);
-			if (moveVector.getSteer() < 0) { // steerRと正負を揃える
+			if (vecMove.getSteer() < 0) { // steerRと正負を揃える
 				turnR = -turnR;
 			}
 
@@ -184,7 +175,7 @@ void ctrl::VectorCalculator::calculateVector(ctrl::Vector &out, ctrl::MoveVector
 			// ジョイスティックによる速度指定は、車両外周部の速度とする。
 			// そのため半径が小さくなると、基準位置での速度が小さくなる。
 			// turnSpdは基準位置の速度（常に正）
-			turnSpeed = std::fabs(turnR) / (std::fabs(turnR) + wheelAttr.getWheelDist()) * moveVector.getMagnitude();
+			turnSpeed = std::fabs(turnR) / (std::fabs(turnR) + wheelAttr.getWheelDist()) * vecMove.getMagnitude();
 
 			// 移動ベクトルを算出
 			// 旋回中心とホイール位置の距離（XY座標）
@@ -193,29 +184,29 @@ void ctrl::VectorCalculator::calculateVector(ctrl::Vector &out, ctrl::MoveVector
 
 			if ((std::fabs(vx) < 5) && (std::fabs(vy) < 5)) {
 				// 旋回中心とホイール位置が重なっているのでゼロベクトルにする
-				out.setMagnitude(0.0);
-				out.setAngle(0.0);
+				vecWheel.setMagnitude(0.0);
+				vecWheel.setAngle(0.0);
 
 			} // ホイールの移動あり
 			else {
 				// 旋回中心から見たホイール位置の角度
 				vAngle = std::atan2(vy, vx);
 				// ホイール位置での移動ベクトルの向き（軌跡円の接線方向）
-				out.setAngle(vAngle + M_PI_2);
+				vecWheel.setAngle(vAngle + M_PI_2);
 				// 旋回半径の差による速度の増減
 
 				if (std::fabs(turnR) > 10) { // 車両中心の旋回半径が0でないので緩旋回
 					speedFact = std::sqrt(vx * vx + vy * vy) / turnR;
 					// ホイール位置での移動速度
-					out.setMagnitude(turnSpeed * speedFact);
+					vecWheel.setMagnitude(turnSpeed * speedFact);
 
-				} else if (moveVector.getSteer() < 0) { // 旋回半径が極めて小さいので超信地旋回（右旋回）
+				} else if (vecMove.getSteer() < 0) { // 旋回半径が極めて小さいので超信地旋回（右旋回）
 					// 本来はturnRの正負で速度の正負が決まるが、0なのでsteerの正負を使う
 					// 右旋回なので速度を負数にする
-					out.setMagnitude(-moveVector.getMagnitude());
+					vecWheel.setMagnitude(-vecMove.getMagnitude());
 
 				} else { // 左超信地旋回
-					out.setMagnitude(moveVector.getMagnitude());
+					vecWheel.setMagnitude(vecMove.getMagnitude());
 
 				}
 			}
@@ -223,7 +214,7 @@ void ctrl::VectorCalculator::calculateVector(ctrl::Vector &out, ctrl::MoveVector
 
 	} // 停止
 	else {
-		out.setMagnitude(0.0);
-		out.setAngle(0.0);
+		vecWheel.setMagnitude(0.0);
+		vecWheel.setAngle(0.0);
 	}
 }
