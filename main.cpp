@@ -1,8 +1,8 @@
 #include <iostream>
 #include <fstream>
 #include <cmath>
-#include "src/VectorCtrl.hpp"
-#include "src/MecanumWheel.hpp"
+#include "VectorCtrl/VectorCtrl.hpp"
+#include "VectorCtrl/MecanumWheel.hpp"
 
 /*
  * 座標がくそってるから変換必須
