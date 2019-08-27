@@ -11,7 +11,7 @@
 namespace ctrl {
 	class MecanumWheelController final : private VectorCalculator {
 	public:
-		explicit MecanumWheelController(int wheelNum, double limitWheelSpeed, double offset = 0);
+		explicit MecanumWheelController(int wheelNum, double limitWheelSpeed=1.0, double offset = 0);
 
 		~MecanumWheelController(); // メモリ開放
 
@@ -34,7 +34,7 @@ namespace ctrl {
 		double maxWheelSpeed;
 		double speedFact;
 		double *wheelSpeed; // ホイールの数だけ生成
-		ctrl::Vector *vector;
+		ctrl::Vector *vecWheel;
 		ctrl::WheelAttr *wheelAttr;
 	};
 }

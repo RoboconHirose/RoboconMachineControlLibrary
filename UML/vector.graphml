@@ -150,7 +150,7 @@
 - double maxWheelSpeed
 - double speedFact
 - double *wheelSpeed &lt;- ホイールの数だけ生成
-- Vector *vector
+- Vector *vecWheel
 - WheelAttr *wheelAttr</y:AttributeLabel>
                 <y:MethodLabel xml:space="preserve">+ MecanumWheelController(int wheelNum, double limitWheelSpeed, double offset);
 + ~MecanumWheelController(); &lt;- メモリ開放

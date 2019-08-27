@@ -61,16 +61,11 @@ void ctrl::VectorMove::setAngle(double angle) {
 }
 
 void ctrl::VectorMove::setMagnitude(double magnitude) {
-	if (magnitude >= 0.0 && magnitude <= SQUARE_ROOT_2) {
+	if (magnitude >= 0.0 && magnitude <= SQUARE_ROOT_2 + EPSILON) {
 		Vector::setMagnitude(magnitude);
 	} else {
 		Vector::setMagnitude(0.0);
 	}
-}
-
-void ctrl::VectorMove::setXY(double x, double y) {
-    VectorMove::setMagnitude(std::hypot(x, y));
-    VectorMove::setAngle(atan2(y, x));
 }
 
 void ctrl::VectorMove::setSteer(double steer) {

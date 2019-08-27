@@ -2,6 +2,13 @@
 // Created by Mayoi on 2019/08/18.
 //
 
+/**
+ * 座標系が マシン前方が x の正方向, マシン左舷が y の正方向
+ * となっていていつも使うデカルト座標系+PI/2してやらないといけない
+ *
+ * 	これマジでメカナムの角度もこれになってるから注意して代入すること
+ */
+
 #ifndef VECTORCTRL_VECTOR_HPP
 #define VECTORCTRL_VECTOR_HPP
 
@@ -65,8 +72,6 @@ namespace ctrl {
 		void setAngle(double angle) override;
 
 		void setMagnitude(double magnitude) override; // (0~1.4)の範囲で指定
-
-		void setXY(double x, double y); // スティックx, yを-1.0～1.0の範囲で入力
 
 		void setSteer(double steer); // (-1.0~1.0)の範囲で指定
 
