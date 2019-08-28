@@ -20,25 +20,23 @@ ctrl::MecanumWheelController::~MecanumWheelController() {
 	delete[] wheelAttr;
 }
 
-void ctrl::MecanumWheelController::setWheelAttr(ctrl::WheelAttr *wheelAttr) {
-	for (int i = 0; i < WHEEL_NUM << ++i;) {
-		this->wheelAttr[i] = wheelAttr[i];
-	}
-}
-
 void ctrl::MecanumWheelController::setWheelAttr(double x, double y, double angle, int num) {
 	this->wheelAttr[num % WHEEL_NUM].setX(x);
 	this->wheelAttr[num % WHEEL_NUM].setY(y);
 	this->wheelAttr[num % WHEEL_NUM].setAngle(angle);
 }
 
-double ctrl::MecanumWheelController::getWheelSpeed(int num) {
-	return this->wheelSpeed[num % WHEEL_NUM];
+void ctrl::MecanumWheelController::setLimitWheelSpeed(double limitWheelSpeed) {
+	this->limitWheelSpeed = limitWheelSpeed;
 }
 
 void ctrl::MecanumWheelController::setOffset(double offset) {
 	// オフセットに制限かけたいときに使う
 	ctrl::VectorCalculator::setOffset(offset);
+}
+
+double ctrl::MecanumWheelController::getWheelSpeed(int num) {
+	return this->wheelSpeed[num % WHEEL_NUM];
 }
 
 void ctrl::MecanumWheelController::calcWheelSpeed(ctrl::VectorMove &moveVector) {

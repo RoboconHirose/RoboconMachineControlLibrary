@@ -1,8 +1,8 @@
 #include <iostream>
 #include <fstream>
 #include <cmath>
-#include "VectorCtrl/VectorCtrl.hpp"
-#include "VectorCtrl/MecanumWheel.hpp"
+#include "Ctrl/VectorCtrl.hpp"
+#include "Ctrl/MecanumWheel.hpp"
 
 /*
  * 座標がくそってるから変換必須
@@ -22,7 +22,6 @@ double d2r(double d) {
 int main() {
 	ctrl::MecanumWheelController controller(4, 1.0, 0.0);
 
-	// ざひょうの指定するとき気をつけろ!
 	controller.setWheelAttr(50, -50, M_PI_4, FR);
 	controller.setWheelAttr(50, 50, M_PI_4 * 3, FL);
 	controller.setWheelAttr(-50, -50, M_PI_4 * 3, BR);

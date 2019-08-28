@@ -154,7 +154,6 @@
 - WheelAttr *wheelAttr</y:AttributeLabel>
                 <y:MethodLabel xml:space="preserve">+ MecanumWheelController(int wheelNum, double limitWheelSpeed, double offset);
 + ~MecanumWheelController(); &lt;- メモリ開放
-+ void setWheelAttr(WheelAttr *wheelAttr);
 + void setWheelAttr(double x, double y, double angle, int num);
 + void setLimitWheelSpeed(double limitWheelSpeed);
 + void calcWheelSpeed(VectorMove &amp;moveVector);

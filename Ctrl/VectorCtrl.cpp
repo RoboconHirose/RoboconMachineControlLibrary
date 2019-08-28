@@ -18,7 +18,7 @@ double ctrl::normalize(double target, double min, double max, double center) {
 }
 
 //----------------------------------------------------
-// ctrl::Vectorの実装
+// Ctrl::Vectorの実装
 ctrl::Vector::Vector() : angle(0.0), magnitude(0.0) {
 }
 
@@ -39,7 +39,7 @@ void ctrl::Vector::setMagnitude(double magnitude) {
 }
 
 //----------------------------------------------------
-// ctrl::MoveVectorの実装
+// Ctrl::MoveVectorの実装
 ctrl::VectorMove::VectorMove() : Vector(), steer(0.0) {
 
 }
@@ -77,7 +77,7 @@ void ctrl::VectorMove::setSteer(double steer) {
 }
 
 //----------------------------------------------------------
-// ctrl::WheelAttr
+// Ctrl::WheelAttr
 
 ctrl::WheelAttr::WheelAttr() : x(0.0), y(0.0), angle(0.0) {
 
@@ -116,8 +116,7 @@ void ctrl::WheelAttr::setAngle(double angle) {
 }
 
 //----------------------------------------------------------
-// ctrl::VectorCalculator
-
+// Ctrl::VectorCalculator
 ctrl::VectorCalculator::VectorCalculator() : VectorCalculator(0.0) {
 
 }
