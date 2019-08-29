@@ -1,4 +1,5 @@
-# PidControllerクラス説明書
+# PidControllerクラス説明書  
+
 PID制御を実装したクラスです。  
 doubleで実装。doubleの演算回路を載せたマイコン向けです。
 
