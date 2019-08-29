@@ -239,11 +239,11 @@ namespace ctrl {
 
 		/**
 		 * @brief 移動ベクトルを駆動ベクトルに変換
-		 * @param[out] vecWheel 駆動ベクトルを代入するクラスを指定
-		 * @param[in] vecMove 移動ベクトルを指定
+		 * @param[out] vectorWheel 駆動ベクトルを代入するクラスを指定
+		 * @param[in] vectorMove 移動ベクトルを指定
 		 * @param[in] wheelAttr ホイールの位置情報を指定
 		 */
-		void calculateVector(ctrl::Vector &vecWheel, ctrl::VectorMove &vecMove, ctrl::WheelAttr &wheelAttr);
+		void calculateVector(ctrl::Vector &vectorWheel, ctrl::VectorMove &vectorMove, ctrl::WheelAttr &wheelAttr);
 
 	private:
 		double steerR;  // 基準位置からの旋回半径
