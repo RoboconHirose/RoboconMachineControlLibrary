@@ -20,14 +20,14 @@
         <y:ProxyAutoBoundsNode>
           <y:Realizers active="0">
             <y:GroupNode>
-              <y:Geometry height="886.5449384292035" width="1781.067030190547" x="-2031.878333333335" y="-1092.980938429203"/>
+              <y:Geometry height="886.5449384292035" width="1794.067030190547" x="-2031.878333333335" y="-1092.980938429203"/>
               <y:Fill color="#F5F5F5" transparent="false"/>
               <y:BorderStyle color="#000000" type="dashed" width="1.0"/>
-              <y:NodeLabel alignment="right" autoSizePolicy="node_width" backgroundColor="#EBEBEB" borderDistance="0.0" fontFamily="Dialog" fontSize="15" fontStyle="plain" hasLineColor="false" height="22.37646484375" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" verticalTextPosition="bottom" visible="true" width="1781.067030190547" x="0.0" xml:space="preserve" y="0.0">ctrl namespace</y:NodeLabel>
+              <y:NodeLabel alignment="right" autoSizePolicy="node_width" backgroundColor="#EBEBEB" borderDistance="0.0" fontFamily="Dialog" fontSize="15" fontStyle="plain" hasLineColor="false" height="22.37646484375" horizontalTextPosition="center" iconTextGap="4" modelName="internal" modelPosition="t" textColor="#000000" verticalTextPosition="bottom" visible="true" width="1794.067030190547" x="0.0" xml:space="preserve" y="0.0">ctrl namespace</y:NodeLabel>
               <y:Shape type="roundrectangle"/>
               <y:State closed="false" closedHeight="50.0" closedWidth="50.0" innerGraphDisplayEnabled="false"/>
               <y:Insets bottom="15" bottomF="15.0" left="15" leftF="15.0" right="15" rightF="15.0" top="15" topF="15.0"/>
-              <y:BorderInsets bottom="0" bottomF="0.0" left="0" leftF="0.0" right="0" rightF="0.0" top="2" topF="2.304473585453252"/>
+              <y:BorderInsets bottom="5" bottomF="5.0" left="0" leftF="0.0" right="0" rightF="0.0" top="2" topF="2.304473585453252"/>
             </y:GroupNode>
             <y:GroupNode>
               <y:Geometry height="50.0" width="50.0" x="0.0" y="60.0"/>
@@ -91,10 +91,10 @@
           <data key="d4" xml:space="preserve"/>
           <data key="d6">
             <y:UMLClassNode>
-              <y:Geometry height="328.0" width="491.4547056639999" x="-1023.1000000000005" y="-1053.2999999999997"/>
+              <y:Geometry height="328.0" width="522.4547056639999" x="-1023.1000000000005" y="-1053.2999999999997"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
-              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="108.03173828125" x="191.71148369137495" xml:space="preserve" y="3.0">VectorCalculator<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
+              <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="108.03173828125" x="207.21148369137495" xml:space="preserve" y="3.0">VectorCalculator<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="0.0" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
               <y:UML clipContent="true" constraint="" hasDetailsColor="false" omitDetails="false" stereotype="" use3DEffect="true">
                 <y:AttributeLabel xml:space="preserve">- double steerR;  &lt;- 基準位置からの旋回半径
 - double turnR;   &lt;- 車両原点位置での旋回半径
@@ -110,7 +110,7 @@
                 <y:MethodLabel xml:space="preserve">+ VectorCalculator(); &lt;- デフォルトコンストラクタ
 + VectorCalculator(double offset);
 + virtual void setOffset(double offset);
-+ void calculateVector(Vector &amp;vecWheel, VectorMove &amp;vecMove, WheelAttr &amp;wheelAttr);</y:MethodLabel>
++ void calculateVector(Vector &amp;vectorWheel, VectorMove &amp;vectorMove, WheelAttr &amp;wheelAttr);</y:MethodLabel>
               </y:UML>
             </y:UMLClassNode>
           </data>
@@ -140,7 +140,7 @@
           <data key="d4" xml:space="preserve"/>
           <data key="d6">
             <y:UMLClassNode>
-              <y:Geometry height="325.6" width="484.33634777646535" x="-1027.8059999999991" y="-547.0359999999995"/>
+              <y:Geometry height="325.6" width="484.33634777646535" x="-1011.8059999999991" y="-552.0359999999995"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="13" fontStyle="bold" hasBackgroundColor="false" hasLineColor="false" height="19.92626953125" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="164.3544921875" x="159.99092779448267" xml:space="preserve" y="3.0">MecanumWheelController<y:LabelModel><y:SmartNodeLabelModel distance="4.0"/></y:LabelModel><y:ModelParameter><y:SmartNodeLabelModelParameter labelRatioX="0.0" labelRatioY="0.0" nodeRatioX="0.0" nodeRatioY="-0.03703090122767855" offsetX="0.0" offsetY="0.0" upX="0.0" upY="-1.0"/></y:ModelParameter></y:NodeLabel>
@@ -150,7 +150,7 @@
 - double maxWheelSpeed
 - double speedFact
 - double *wheelSpeed &lt;- ホイールの数だけ生成
-- Vector *vecWheel
+- Vector *vectorWheel
 - WheelAttr *wheelAttr</y:AttributeLabel>
                 <y:MethodLabel xml:space="preserve">+ MecanumWheelController(int wheelNum, double limitWheelSpeed, double offset);
 + ~MecanumWheelController(); &lt;- メモリ開放
@@ -166,7 +166,7 @@
           <data key="d4" xml:space="preserve"/>
           <data key="d6">
             <y:UMLNoteNode>
-              <y:Geometry height="70.40000000000009" width="228.00000000000023" x="-493.8113031427881" y="-1052.0904094341802"/>
+              <y:Geometry height="70.40000000000009" width="228.00000000000023" x="-480.8113031427881" y="-1051.0904094341802"/>
               <y:Fill color="#FFCC00" transparent="false"/>
               <y:BorderStyle color="#000000" type="line" width="1.0"/>
               <y:NodeLabel alignment="center" autoSizePolicy="content" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="48.103515625" horizontalTextPosition="center" iconTextGap="4" modelName="custom" textColor="#000000" verticalTextPosition="bottom" visible="true" width="136.0" x="46.000000000000114" xml:space="preserve" y="11.148242187500045">基底クラス
@@ -249,7 +249,7 @@
       <data key="d8" xml:space="preserve"/>
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="0.6902785568564695" sy="-130.9754039928659" tx="-6.127352831999474" ty="68.29999999999973"/>
+          <y:Path sx="0.6902785568564695" sy="-130.9754039928659" tx="-6.513854244241212" ty="68.29999999999973"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="none" target="white_delta"/>
           <y:BendStyle smoothed="false"/>
@@ -260,7 +260,7 @@
       <data key="d8" xml:space="preserve"/>
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="-237.6373606141193" sy="-50.13599999999951" tx="101.19399999999996" ty="-8.935999999999126"/>
+          <y:Path sx="-252.62705975452033" sy="-50.13599999999951" tx="101.19399999999996" ty="-8.935999999999126"/>
           <y:LineStyle color="#000000" type="line" width="1.0"/>
           <y:Arrows source="white_diamond" target="none"/>
           <y:BendStyle smoothed="false"/>
@@ -315,7 +315,7 @@
       <data key="d8" xml:space="preserve"/>
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="-238.5761470623796" sy="56.26400000000035" tx="146.59400000000005" ty="-74.84714337567952">
+          <y:Path sx="-253.6250630127139" sy="56.26400000000035" tx="146.59400000000005" ty="-74.84714337567952">
             <y:Point x="-1156.2059999999997" y="-833.8359999999993"/>
             <y:Point x="-1158.6059999999998" y="-447.43599999999935"/>
           </y:Path>
@@ -340,7 +340,7 @@
       <data key="d8" xml:space="preserve"/>
       <data key="d10">
         <y:PolyLineEdge>
-          <y:Path sx="172.5861810695271" sy="-118.70000000000027" tx="-64.70393899999965" ty="9.497699999998531"/>
+          <y:Path sx="183.4725792492469" sy="-118.70000000000027" tx="-64.70393899999965" ty="9.497699999998531"/>
           <y:LineStyle color="#000000" type="dashed" width="1.0"/>
           <y:Arrows source="none" target="plain"/>
           <y:BendStyle smoothed="false"/>
