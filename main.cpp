@@ -15,7 +15,7 @@ int main() {
 		sinWav = cos(i / 10.0);
 		pidv = pid.calculate(sinWav, sinWavFix);
 		sum = pidv + sinWavFix;
-		sinWavFix += pidv + ((std::sin((i / 6.0) + M_PI_4) / 2.0) + 0.05);
+		sinWavFix += pidv + ((std::sin((i / 6.0) + M_PI_4) / 2.0) + 0.045);
 
 
 		outputcsv << sinWav << ",";
