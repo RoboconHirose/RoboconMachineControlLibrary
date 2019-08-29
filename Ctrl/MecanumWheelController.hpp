@@ -22,12 +22,20 @@ namespace ctrl {
 		 * @note 出力の範囲について
 		 * @note limitで指定した大きさになる. 絶対値で±になるが
 		 *
-		 * Examle:
+		 * Example:
 		 * @code
+		 * //////////////////////////////////////////////////////
+		 * // インクルード
+		 * //////////////////////////////////////////////////////
 		 *#include "mbed.h"
-		 * // メカナム制御ライブラリをインクルード
-		 *#include "MecanumWheel.hpp"
 		 *
+		 * // 以下のどちらかでライブラリをインクルード
+		 *#include "Ctrl/MecanumWheel.hpp"
+		 *#include "Ctrl/Ctrl.hpp"
+		 *
+		 * //////////////////////////////////////////////////////
+		 * // 各種グローバル宣言
+		 * //////////////////////////////////////////////////////
 		 * // モーター用pwmピン宣言
 		 *PwmOut pwm[4] = {
 		 *      PwmOut(p26),
@@ -53,23 +61,28 @@ namespace ctrl {
          * }
          *
          * // メカナム制御ライブラリ宣言 リミットとオフセットは規定値
-         * MecanumWheelController mwc(4);
+         * ctrl::MecanumWheelController mwc(4);
          *
-         * // 速度ベクトル管理ライブラリ宣言
-         * VectorMove vecMove;
+         * // 移動ベクトル管理ライブラリ宣言
+         * ctrl::VectorMove vecMove;
          *
+         * //////////////////////////////////////////////////////
          * // モーター動かす関数
+         * //////////////////////////////////////////////////////
          * void move(PwmOut &pwm,DigitalOut &md, double power){
          * 	// 前進と後退で処理わけ
          * 	if(power >= 0.0){ // 正転
          * 		md.write(0);
-         * 		pwm.write(power);
+         * 		pwm.write((float)power);
          * 	}else{ // 逆転
          * 		md.write(1);
-         * 		pwm.write(1.0 + power);
+         * 		pwm.write((float)(1.0 + power));
          * 	}
          * }
          *
+         * //////////////////////////////////////////////////////
+         * // メイン関数
+         * //////////////////////////////////////////////////////
          * int main(){
          *  // 初期化
          *  for(int i=0;i < 4;++i){
@@ -85,15 +98,18 @@ namespace ctrl {
          *
          *  // メインループ
          * 	while(1){
-         * 		// Magnitudeは0.0～1.0, Steerは +1.0～-1.0の範囲(左が正方向, 右が負方向)
-         * 		// ctrl::normalize(double target, double min, double max, double center);を使うと楽に正規化できる
+         * 		// コントローラから値を変換するならこんな感じ
+         * 		double x = ctrl::normalize(120.0, 0.0, 255.0, 127.0);
+         * 		double y = ctrl::normalize(12.0, 0.0, 255.0, 127.0);
+         *		double mag = std::hypot(x, y);
+         *		double ang = std::atan2(y ,x);
          *
-         *		// 極座標でベクトルを指定
-         *		vecMove.setMagnitude(1.0);
-         *		// コントローラの座標は座標変換で対応変換してね(+(M_PI * 2.0 / 3.0)で足りる)
-         *		vecMove.setAngle(M_PI);
+         *		// 強さ. 範囲は0.0～√2,
+         *		vecMove.setMagnitude(mag);
+         *		// 角度. ラジアンで指定する
+         *		vecMove.setAngle(ang);
          *
-         *		// ステアリング(回転方向)のベクトルを設定. 左最大値が1.0,右最大値が-1.0の範囲
+         *		// ステアリング(回転方向)のベクトルを設定. 範囲は-1.0～+1.0. 左が正
          *		vecMove.setSteer(0.2);
          *
          *
@@ -167,7 +183,7 @@ namespace ctrl {
 		double maxWheelSpeed;
 		double speedFact;
 		double *wheelSpeed;
-		ctrl::Vector *vecWheel;
+		ctrl::Vector *vectorWheel;
 		ctrl::WheelAttr *wheelAttr;
 	};
 }

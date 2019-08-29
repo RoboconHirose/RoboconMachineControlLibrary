@@ -2,21 +2,21 @@
 // Created by Mayoi on 2019/08/18.
 //
 
-#include "MecanumWheel.hpp"
+#include "MecanumWheelController.hpp"
 
 ctrl::MecanumWheelController::MecanumWheelController(int wheelNum, double limitWheelSpeed, double offset)
 		: WHEEL_NUM(wheelNum), limitWheelSpeed(limitWheelSpeed), maxWheelSpeed(0.0),
 		  speedFact(0.0) {
 	this->setOffset(offset);
 	wheelSpeed = new double[wheelNum];
-	vecWheel = new ctrl::Vector[wheelNum];
+	vectorWheel = new ctrl::Vector[wheelNum];
 	wheelAttr = new ctrl::WheelAttr[wheelNum];
 }
 
 ctrl::MecanumWheelController::~MecanumWheelController() {
 	// メモリ開放
 	delete[] wheelSpeed;
-	delete[] vecWheel;
+	delete[] vectorWheel;
 	delete[] wheelAttr;
 }
 
@@ -45,14 +45,14 @@ void ctrl::MecanumWheelController::calcWheelSpeed(ctrl::VectorMove &moveVector) 
 
 	for (int i = 0; i < this->WHEEL_NUM; ++i) {
 		// 移動ベクトルを求める
-		ctrl::VectorCalculator::calculateVector(this->vecWheel[i], moveVector, this->wheelAttr[i]);
+		ctrl::VectorCalculator::calculateVector(this->vectorWheel[i], moveVector, this->wheelAttr[i]);
 
-		if (vecWheel[i].getMagnitude() == 0) { // 駆動せず
+		if (vectorWheel[i].getMagnitude() == 0) { // 駆動せず
 			this->wheelSpeed[i] = 0;
 		} else { // 移動ベクトルから駆動速度を求める
 			// ローラーの傾きの違いを考慮して、ホイール進行方向の速度を算出
-			wheelSpeed[i] = limitWheelSpeed * SQUARE_ROOT_2 * sin(vecWheel[i].getAngle() + wheelAttr[i].getAngle()) *
-			                vecWheel[i].getMagnitude();
+			wheelSpeed[i] = limitWheelSpeed * SQUARE_ROOT_2 * sin(vectorWheel[i].getAngle() + wheelAttr[i].getAngle()) *
+			                vectorWheel[i].getMagnitude();
 
 		}
 		// 一番速い駆動値を調べる
