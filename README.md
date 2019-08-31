@@ -23,7 +23,9 @@
 - [Q&A](#qa)
     - [これが使える環境は?](#これが使える環境は?)
     - [速度が出ない](#速度が出ない)  
-    - [これ作った作者と直接話したい](#これ作った作者と直接話したい)
+    - [これ作った作者と直接話したい](#これ作った作者と直接話したい)  
+- [License](#license)  
+- [Author](#author)
     
 # 概要
 
@@ -48,9 +50,9 @@
 
 ## ライブラリを使いたい
 
-初めに[このページ](https://github.com/Agatsuma854/RoboconMachineControlLibrary)の`Clone or download`をクリックし`Download ZIP`を選択してダウンロード  
+初めに[リリース](https://github.com/Agatsuma854/RoboconMachineControlLibrary/releases)の最新のライブラリをダウンロードします  
 
-次に`RoboconMachineControlLibrary`を解凍し中にある`Ctrl`フォルダをコピーし自分がコードを書いているフォルダに貼り付ける  
+次に`RoboconMachineControlLibrary-XX`を解凍し中にある`Ctrl`フォルダをコピーし自分がコードを書いているフォルダに貼り付ける  
 
 コピーしたらライブラリを使用したいソースコードの上部で`Ctrl/Ctrl.hpp`と記述しライブラリ群をインクルードする  
 
@@ -86,25 +88,42 @@ $ git clone https://github.com/Agatsuma854/RoboconMachineControlLibrary.git
 
 ```cpp
 // 工事中
-```
+```  
 
-#ドキュメント  
+# ドキュメント  
+
+Doxygen版はGitHubで表示するとHTMLの生のコードが見えてしまうのでダウンロードしてから見てください  
+正式リリースまでにマークダウン版も用意します  
 
 ## ライブラリを使う  
 
 ### PidController  
 
+- [ドキュメント(マークダウン)](Document/Markdowm/PidController.md)  
+
+- [Doxygen版](Document/html/classctrl_1_1_pid_controller.html)
+
 ### MecanumWheelController  
 
+- [Doxygen版](Document/html/classctrl_1_1_mecanum_wheel_controller.html)
+
 ### VectorMove  
+
+- [Doxygen版](Document/html/classctrl_1_1_vector_move.html)
 
 ## ライブラリを作る  
 
 ### Vector  
 
+- [Doxygen版](Document/html/classctrl_1_1_vector.html)  
+
 ### WheelAttr  
 
+- [Doxygen版](Document/html/classctrl_1_1_wheel_attr.html)  
+
 ### VectorCalculator  
+
+- [Doxygen版](Document/html/classctrl_1_1_vector_calculator.html)  
 
 # Q&A  
 
@@ -114,13 +133,15 @@ C++14以上の環境であればどこでも
 
 ### 速度が出ない  
 
-お使いのマイコンはdoubleがた
+お使いのマイコンがdouble演算機を載せていない可能性が高いのでfloat型に置換して使うとよいと思います  
 
 ### これ作った作者と直接話したい  
 
+[連作先](#author)  何かあれば気軽に連絡ください
+
 # License  
 
-まだ正式リリースではないから保留. (一部ファイルを除きGNU AGPLにしようか検討中)
+まだ正式リリースではないから保留. (一部ファイルを除きGNU GPLv3にしようか検討中)
 
 # Author
 
