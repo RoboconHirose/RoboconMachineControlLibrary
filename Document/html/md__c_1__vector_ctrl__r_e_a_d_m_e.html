@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>RoboconMachineControlLibrary: README</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">RoboconMachineControlLibrary
+   &#160;<span id="projectnumber">v0.1-alpha</span>
+   </div>
+   <div id="projectbrief">ロボコンの制御ライブラリ</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="PageDoc"><div class="header">
+  <div class="headertitle">
+<div class="title">README </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p>高専ロボコンでラクするためのライブラリたち</p>
+<h1><a class="anchor" id="autotoc_md7"></a>
+TOC</h1>
+<ul>
+<li><a href="#概要">概要</a></li>
+<li><a href="#機能">機能</a></li>
+<li><a href="#クイックスタート">クイックスタート</a><ul>
+<li><a href="#ライブラリを使いたい">ライブラリを使いたい</a></li>
+<li><a href="#ライブラリを改良,開発したい">ライブラリを改良,開発したい</a></li>
+</ul>
+</li>
+<li><a href="#サンプルコード">サンプルコード</a><ul>
+<li><a href="#PID制御を使う">PID制御を使う</a></li>
+<li><a href="#メカナムを動かす">メカナムを動かす</a></li>
+<li><a href="#ナビゲーターを使う">ナビゲーターを使う</a></li>
+</ul>
+</li>
+<li><a href="#ドキュメント">ドキュメント</a><ul>
+<li><a href="#ライブラリを使う">ライブラリを使う</a><ul>
+<li><a href="#PidController">PidController</a></li>
+<li><a href="#MecanumWheelController">MecanumWheelController</a></li>
+<li><a href="#VectorMove">VectorMove</a></li>
+</ul>
+</li>
+<li><a href="#ライブラリを作る">ライブラリを作る</a><ul>
+<li><a href="#Vector">Vector</a></li>
+<li><a href="#WheelAttr">WheelAttr</a></li>
+<li><a href="#VectorCalculator">VectorCalculator</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#qa">Q&amp;A</a><ul>
+<li><a href="#これが使える環境は?">これが使える環境は?</a></li>
+<li><a href="#速度が出ない">速度が出ない</a> <br  />
+</li>
+<li><a href="#これ作った作者と直接話したい">これ作った作者と直接話したい</a></li>
+</ul>
+</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md8"></a>
+概要</h1>
+<ul>
+<li>簡単に使用できる <br  />
+</li>
+<li>移動, PID制御, 自動走行をサポート <br  />
+</li>
+<li>マイコンの機種に依存しない設計 <br  />
+</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md9"></a>
+機能</h1>
+<ul>
+<li>PID制御 <br  />
+<ul>
+<li>微分積分の知識がなくとも使用可</li>
+</ul>
+</li>
+<li>ベクトル制御 <br  />
+<ul>
+<li>ベクトル演算,制御理論の知識がなくとも使用可</li>
+<li>ホイールの位置に従って最適な移動ベクトルを算出 <br  />
+</li>
+<li>メカナムホイールに対応 <br  />
+</li>
+<li>汎用的な基底クラス設計. 車輪移動系のマシンであれば簡単に対応可能 <br  />
+</li>
+</ul>
+</li>
+<li>自動走行<ul>
+<li>移動したい座標, 自己位置を渡すことで自動で目標へ移動 <br  />
+</li>
+<li>現在実装と確認作業中</li>
+</ul>
+</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md10"></a>
+クイックスタート</h1>
+<h2><a class="anchor" id="autotoc_md11"></a>
+ライブラリを使いたい</h2>
+<p>初めに<a href="https://github.com/Agatsuma854/RoboconMachineControlLibrary">このページ</a>の<code>Clone or download</code>をクリックし<code>Download ZIP</code>を選択してダウンロード <br  />
+</p>
+<p>次に<code>RoboconMachineControlLibrary</code>を解凍し中にある<code>Ctrl</code>フォルダをコピーし自分がコードを書いているフォルダに貼り付ける <br  />
+</p>
+<p>コピーしたらライブラリを使用したいソースコードの上部で<code><a class="el" href="_ctrl_8hpp.html">Ctrl/Ctrl.hpp</a></code>と記述しライブラリ群をインクルードする <br  />
+</p>
+<h2><a class="anchor" id="autotoc_md12"></a>
+ライブラリを改良,開発したい</h2>
+<p><a href="https://github.com/Agatsuma854/RoboconMachineControlLibrary">このページ</a>から<code>fork</code>を選択して自分のリポジトリに追加する <br  />
+</p>
+<p>or</p>
+<p>クローンする <br  />
+</p>
+<div class="fragment"><div class="line"> {$xslt}</div>
+<div class="line">$ git clone https://github.com/Agatsuma854/RoboconMachineControlLibrary.git</div>
+</div><!-- fragment --><p>そして開発する. バグや誤字を発見した場合はプルリクエストを出していただけるとありがたい <br  />
+</p>
+<h1><a class="anchor" id="autotoc_md13"></a>
+サンプルコード</h1>
+<h3><a class="anchor" id="autotoc_md14"></a>
+PID制御を使う</h3>
+<div class="fragment"><div class="line"><span class="comment">// 工事中</span></div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md15"></a>
+メカナムを動かす</h3>
+<div class="fragment"><div class="line"><span class="comment">// 工事中</span></div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md16"></a>
+ナビゲーターを使う</h3>
+<div class="fragment"><div class="line"><span class="comment">// 工事中</span></div>
+</div><!-- fragment --><p>#ドキュメント <br  />
+</p>
+<h2><a class="anchor" id="autotoc_md17"></a>
+ライブラリを使う</h2>
+<h3><a class="anchor" id="autotoc_md18"></a>
+PidController</h3>
+<ul>
+<li><a class="el" href="_pid_controller_8md.html">ドキュメント(マークダウン)</a></li>
+</ul>
+<h3><a class="anchor" id="autotoc_md19"></a>
+MecanumWheelController</h3>
+<h3><a class="anchor" id="autotoc_md20"></a>
+VectorMove</h3>
+<h2><a class="anchor" id="autotoc_md21"></a>
+ライブラリを作る</h2>
+<h3><a class="anchor" id="autotoc_md22"></a>
+Vector</h3>
+<h3><a class="anchor" id="autotoc_md23"></a>
+WheelAttr</h3>
+<h3><a class="anchor" id="autotoc_md24"></a>
+VectorCalculator</h3>
+<h1><a class="anchor" id="autotoc_md25"></a>
+Q&amp;A</h1>
+<h3><a class="anchor" id="autotoc_md26"></a>
+これが使える環境は?</h3>
+<p>C++14以上の環境であればどこでも</p>
+<h3><a class="anchor" id="autotoc_md27"></a>
+速度が出ない</h3>
+<p>お使いのマイコンはdoubleがた</p>
+<h3><a class="anchor" id="autotoc_md28"></a>
+これ作った作者と直接話したい</h3>
+<h1><a class="anchor" id="autotoc_md29"></a>
+License</h1>
+<p>まだ正式リリースではないから保留. (一部ファイルを除きGNU AGPLにしようか検討中)</p>
+<h1><a class="anchor" id="autotoc_md30"></a>
+Author</h1>
+<p>Agatsuma854 <br  />
+ email : <a href="#" onclick="location.href='mai'+'lto:'+'s17'+'01'+'002'+'@s'+'emd'+'ai'+'-nc'+'t.'+'jp'; return false;">s1701<span style="display: none;">.nosp@m.</span>002@<span style="display: none;">.nosp@m.</span>semda<span style="display: none;">.nosp@m.</span>i-nc<span style="display: none;">.nosp@m.</span>t.jp</a> <br  />
+ Twitter : @oserobo2221 <br  />
+ </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.16
+</small></address>
+</body>
+</html>

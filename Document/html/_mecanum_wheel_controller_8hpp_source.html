@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>RoboconMachineControlLibrary: C:/RoboconMachineControlLibrary/Ctrl/MecanumWheelController.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">RoboconMachineControlLibrary
+   &#160;<span id="projectnumber">v0.1-alpha</span>
+   </div>
+   <div id="projectbrief">ロボコンの制御ライブラリ</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_8d46e73f736d1906b087e16bc0a272c2.html">RoboconMachineControlLibrary</a></li><li class="navelem"><a class="el" href="dir_a22345e818ab00b29405395dee697d57.html">Ctrl</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">MecanumWheelController.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_mecanum_wheel_controller_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef VECTORCTRL_MECANUMWHEEL_HPP</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define VECTORCTRL_MECANUMWHEEL_HPP</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_vector_ctrl_8hpp.html">VectorCtrl.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="namespacectrl.html">   12</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacectrl.html">ctrl</a> {</div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="classctrl_1_1_mecanum_wheel_controller.html">  128</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classctrl_1_1_mecanum_wheel_controller.html">MecanumWheelController</a> final : <span class="keyword">private</span> <a class="code" href="classctrl_1_1_vector_calculator.html">VectorCalculator</a> {</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="classctrl_1_1_mecanum_wheel_controller.html#a0463861c859c2b9041c68fe5aaddf98a">MecanumWheelController</a>(<span class="keywordtype">int</span> wheelNum, <span class="keywordtype">double</span> limitWheelSpeed = 1.0, <span class="keywordtype">double</span> offset = 0.0);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <a class="code" href="classctrl_1_1_mecanum_wheel_controller.html#a0a298ec77f9531934f9156dc4cca9074">~MecanumWheelController</a>();</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classctrl_1_1_mecanum_wheel_controller.html#aaa9dd5ec45396156bc6710e8d4f4b892">setWheelAttr</a>(<span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> angle, <span class="keywordtype">int</span> num);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classctrl_1_1_mecanum_wheel_controller.html#a0d2c9c56ddd0e4d049a99ab052190fed">setLimitWheelSpeed</a>(<span class="keywordtype">double</span> limitWheelSpeed); <span class="comment">// ホイールの最大速度を指定</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160; </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classctrl_1_1_mecanum_wheel_controller.html#ac26357aa6d6facaf19017f714cd59023">setOffset</a>(<span class="keywordtype">double</span> offset) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classctrl_1_1_mecanum_wheel_controller.html#adcac44a1f7390646b120bf8dc6e8c2ed">getWheelSpeed</a>(<span class="keywordtype">int</span> num); <span class="comment">// 各ホイールのスピード(出力値)を取得</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classctrl_1_1_mecanum_wheel_controller.html#a323fc322d63ae783ba039978877dbbae">calcWheelSpeed</a>(<a class="code" href="classctrl_1_1_vector_move.html">VectorMove</a> &amp;moveVector); <span class="comment">// 移動ベクトルを渡して駆動ベクトルを計算させる</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> WHEEL_NUM;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <span class="keywordtype">double</span> limitWheelSpeed;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="keywordtype">double</span> maxWheelSpeed;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="keywordtype">double</span> speedFact;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <span class="keywordtype">double</span> *wheelSpeed;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <a class="code" href="classctrl_1_1_vector.html">ctrl::Vector</a> *vectorWheel;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <a class="code" href="classctrl_1_1_wheel_attr.html">ctrl::WheelAttr</a> *wheelAttr;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    };</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;}</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="preprocessor">#endif //VECTORCTRL_MECANUMWHEEL_HPP</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassctrl_1_1_mecanum_wheel_controller_html_ac26357aa6d6facaf19017f714cd59023"><div class="ttname"><a href="classctrl_1_1_mecanum_wheel_controller.html#ac26357aa6d6facaf19017f714cd59023">ctrl::MecanumWheelController::setOffset</a></div><div class="ttdeci">void setOffset(double offset) override</div><div class="ttdoc">オフセットを指定</div><div class="ttdef"><b>Definition:</b> MecanumWheelController.cpp:33</div></div>
+<div class="ttc" id="aclassctrl_1_1_mecanum_wheel_controller_html_a0a298ec77f9531934f9156dc4cca9074"><div class="ttname"><a href="classctrl_1_1_mecanum_wheel_controller.html#a0a298ec77f9531934f9156dc4cca9074">ctrl::MecanumWheelController::~MecanumWheelController</a></div><div class="ttdeci">~MecanumWheelController()</div><div class="ttdoc">デストラクタ</div><div class="ttdef"><b>Definition:</b> MecanumWheelController.cpp:16</div></div>
+<div class="ttc" id="aclassctrl_1_1_wheel_attr_html"><div class="ttname"><a href="classctrl_1_1_wheel_attr.html">ctrl::WheelAttr</a></div><div class="ttdoc">ホイールの位置を指定するクラス</div><div class="ttdef"><b>Definition:</b> VectorCtrl.hpp:159</div></div>
+<div class="ttc" id="aclassctrl_1_1_mecanum_wheel_controller_html_a0463861c859c2b9041c68fe5aaddf98a"><div class="ttname"><a href="classctrl_1_1_mecanum_wheel_controller.html#a0463861c859c2b9041c68fe5aaddf98a">ctrl::MecanumWheelController::MecanumWheelController</a></div><div class="ttdeci">MecanumWheelController(int wheelNum, double limitWheelSpeed=1.0, double offset=0.0)</div><div class="ttdoc">コンストラクタ</div><div class="ttdef"><b>Definition:</b> MecanumWheelController.cpp:7</div></div>
+<div class="ttc" id="a_vector_ctrl_8hpp_html"><div class="ttname"><a href="_vector_ctrl_8hpp.html">VectorCtrl.hpp</a></div></div>
+<div class="ttc" id="aclassctrl_1_1_vector_html"><div class="ttname"><a href="classctrl_1_1_vector.html">ctrl::Vector</a></div><div class="ttdoc">ベクトル量を保持するクラス</div><div class="ttdef"><b>Definition:</b> VectorCtrl.hpp:58</div></div>
+<div class="ttc" id="aclassctrl_1_1_mecanum_wheel_controller_html"><div class="ttname"><a href="classctrl_1_1_mecanum_wheel_controller.html">ctrl::MecanumWheelController</a></div><div class="ttdoc">ベクトル制御でメカナムを動かすクラス</div><div class="ttdef"><b>Definition:</b> MecanumWheelController.hpp:128</div></div>
+<div class="ttc" id="aclassctrl_1_1_mecanum_wheel_controller_html_a0d2c9c56ddd0e4d049a99ab052190fed"><div class="ttname"><a href="classctrl_1_1_mecanum_wheel_controller.html#a0d2c9c56ddd0e4d049a99ab052190fed">ctrl::MecanumWheelController::setLimitWheelSpeed</a></div><div class="ttdeci">void setLimitWheelSpeed(double limitWheelSpeed)</div><div class="ttdoc">ホイールの最大速度を指定</div><div class="ttdef"><b>Definition:</b> MecanumWheelController.cpp:29</div></div>
+<div class="ttc" id="aclassctrl_1_1_vector_calculator_html"><div class="ttname"><a href="classctrl_1_1_vector_calculator.html">ctrl::VectorCalculator</a></div><div class="ttdoc">各ホイールの移動ベクトルを算出するクラス</div><div class="ttdef"><b>Definition:</b> VectorCtrl.hpp:220</div></div>
+<div class="ttc" id="aclassctrl_1_1_mecanum_wheel_controller_html_aaa9dd5ec45396156bc6710e8d4f4b892"><div class="ttname"><a href="classctrl_1_1_mecanum_wheel_controller.html#aaa9dd5ec45396156bc6710e8d4f4b892">ctrl::MecanumWheelController::setWheelAttr</a></div><div class="ttdeci">void setWheelAttr(double x, double y, double angle, int num)</div><div class="ttdoc">各メカナムの位置を中心からの距離で指定する(単位:xy(mm),angle(radian))</div><div class="ttdef"><b>Definition:</b> MecanumWheelController.cpp:23</div></div>
+<div class="ttc" id="anamespacectrl_html"><div class="ttname"><a href="namespacectrl.html">ctrl</a></div><div class="ttdoc">制御ライブラリ用ネームスペース</div><div class="ttdef"><b>Definition:</b> MecanumWheelController.hpp:12</div></div>
+<div class="ttc" id="aclassctrl_1_1_mecanum_wheel_controller_html_a323fc322d63ae783ba039978877dbbae"><div class="ttname"><a href="classctrl_1_1_mecanum_wheel_controller.html#a323fc322d63ae783ba039978877dbbae">ctrl::MecanumWheelController::calcWheelSpeed</a></div><div class="ttdeci">void calcWheelSpeed(VectorMove &amp;moveVector)</div><div class="ttdoc">移動ベクトルを駆動ベクトルに変換</div><div class="ttdef"><b>Definition:</b> MecanumWheelController.cpp:42</div></div>
+<div class="ttc" id="aclassctrl_1_1_vector_move_html"><div class="ttname"><a href="classctrl_1_1_vector_move.html">ctrl::VectorMove</a></div><div class="ttdoc">移動ベクトルを保持するクラス</div><div class="ttdef"><b>Definition:</b> VectorCtrl.hpp:101</div></div>
+<div class="ttc" id="aclassctrl_1_1_mecanum_wheel_controller_html_adcac44a1f7390646b120bf8dc6e8c2ed"><div class="ttname"><a href="classctrl_1_1_mecanum_wheel_controller.html#adcac44a1f7390646b120bf8dc6e8c2ed">ctrl::MecanumWheelController::getWheelSpeed</a></div><div class="ttdeci">double getWheelSpeed(int num)</div><div class="ttdoc">各ホイールの駆動ベクトルを取得</div><div class="ttdef"><b>Definition:</b> MecanumWheelController.cpp:38</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.16
+</small></address>
+</body>
+</html>

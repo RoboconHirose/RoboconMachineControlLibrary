@@ -1,0 +1,428 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>RoboconMachineControlLibrary: ctrl::PidController クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">RoboconMachineControlLibrary
+   &#160;<span id="projectnumber">v0.1-alpha</span>
+   </div>
+   <div id="projectbrief">ロボコンの制御ライブラリ</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespacectrl.html">ctrl</a></li><li class="navelem"><a class="el" href="classctrl_1_1_pid_controller.html">PidController</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="classctrl_1_1_pid_controller-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle">
+<div class="title">ctrl::PidController クラス</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>PID制御クラス  
+ <a href="classctrl_1_1_pid_controller.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="_pid_controller_8hpp_source.html">PidController.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a481661f6b62d13985115d414d003a43a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classctrl_1_1_pid_controller.html#a481661f6b62d13985115d414d003a43a">PidController</a> (double kp, double ki, double kd, double max_output_value, double attach_period_s=0.0)</td></tr>
+<tr class="memdesc:a481661f6b62d13985115d414d003a43a"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ (割り込み使用時はこちらを使う)  <a href="classctrl_1_1_pid_controller.html#a481661f6b62d13985115d414d003a43a">[詳解]</a><br /></td></tr>
+<tr class="separator:a481661f6b62d13985115d414d003a43a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c68d16e7e6ab7b910bcb83b3df82eb7"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classctrl_1_1_pid_controller.html#a4c68d16e7e6ab7b910bcb83b3df82eb7">calculate</a> (double targetValue, double inputValue)</td></tr>
+<tr class="memdesc:a4c68d16e7e6ab7b910bcb83b3df82eb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">PIDの計算を呼び出す関数  <a href="classctrl_1_1_pid_controller.html#a4c68d16e7e6ab7b910bcb83b3df82eb7">[詳解]</a><br /></td></tr>
+<tr class="separator:a4c68d16e7e6ab7b910bcb83b3df82eb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57f61b8d3056e6da59bade72a10d5882"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classctrl_1_1_pid_controller.html#a57f61b8d3056e6da59bade72a10d5882">calculate</a> (double targetValue, double inputValue, double attach_period_s)</td></tr>
+<tr class="memdesc:a57f61b8d3056e6da59bade72a10d5882"><td class="mdescLeft">&#160;</td><td class="mdescRight">PIDの計算を呼び出す関数(割り込みを場合はこちらを使用すること)  <a href="classctrl_1_1_pid_controller.html#a57f61b8d3056e6da59bade72a10d5882">[詳解]</a><br /></td></tr>
+<tr class="separator:a57f61b8d3056e6da59bade72a10d5882"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bbcad616ae73bc960ea853712e59304"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classctrl_1_1_pid_controller.html#a9bbcad616ae73bc960ea853712e59304">setCoefficient</a> (double coefficient, int selector)</td></tr>
+<tr class="memdesc:a9bbcad616ae73bc960ea853712e59304"><td class="mdescLeft">&#160;</td><td class="mdescRight">PIDの各係数を変更できる  <a href="classctrl_1_1_pid_controller.html#a9bbcad616ae73bc960ea853712e59304">[詳解]</a><br /></td></tr>
+<tr class="separator:a9bbcad616ae73bc960ea853712e59304"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a465867cbf39f94fef5e99abd4d503e56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classctrl_1_1_pid_controller.html#a465867cbf39f94fef5e99abd4d503e56">setAttachPeriodS</a> (double attach_period_s)</td></tr>
+<tr class="memdesc:a465867cbf39f94fef5e99abd4d503e56"><td class="mdescLeft">&#160;</td><td class="mdescRight">擬似的に積分をするための使う時間を指定する  <a href="classctrl_1_1_pid_controller.html#a465867cbf39f94fef5e99abd4d503e56">[詳解]</a><br /></td></tr>
+<tr class="separator:a465867cbf39f94fef5e99abd4d503e56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a839b674215e3c78a2707c29570efbbf0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classctrl_1_1_pid_controller.html#a839b674215e3c78a2707c29570efbbf0">setMaxOutputValue</a> (double max_output_value)</td></tr>
+<tr class="memdesc:a839b674215e3c78a2707c29570efbbf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">出力値の最大値を変更  <a href="classctrl_1_1_pid_controller.html#a839b674215e3c78a2707c29570efbbf0">[詳解]</a><br /></td></tr>
+<tr class="separator:a839b674215e3c78a2707c29570efbbf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>PID制御クラス </p>
+<p>Example: </p><div class="fragment"><div class="line"> <span class="comment">// インクルード</span></div>
+<div class="line"><span class="comment"></span><span class="preprocessor">#include &quot;mbed.h&quot;</span></div>
+<div class="line"> </div>
+<div class="line"> <span class="comment">// 以下のどちらかでライブラリをインクルード</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="_pid_controller_8hpp.html">Ctrl/PidController.hpp</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="_ctrl_8hpp.html">Ctrl/Ctrl.hpp</a>&quot;</span></div>
+<div class="line"> </div>
+<div class="line"> <span class="comment">// グローバル宣言</span></div>
+<div class="line"><span class="comment"></span> <span class="comment">// KP:0.6, KI:0.3, KD:0.5, 出力最大値:M_PI, 割り込み周期:0.05秒で宣言</span></div>
+<div class="line"> <a class="code" href="classctrl_1_1_pid_controller.html">ctrl::PidController</a> pid(0.6, 0.3, 0.9, M_PI, 0.05);</div>
+<div class="line"> </div>
+<div class="line"> <span class="comment">// 割り込みの宣言</span></div>
+<div class="line"> Ticker ticker;</div>
+<div class="line"> </div>
+<div class="line"> <span class="comment">// PCとシリアル通信して値を確認. ボーレートは38400にする宗教のためこの値</span></div>
+<div class="line"> Serial serial(USBTX, USBRX, 38400);</div>
+<div class="line"> </div>
+<div class="line"> <span class="comment">// pidのターゲットと入力, 出力値を保持する変数</span></div>
+<div class="line"> <span class="keywordtype">double</span> sinWave=0.0;</div>
+<div class="line"> <span class="keywordtype">double</span> input=0.0;</div>
+<div class="line"> <span class="keywordtype">double</span> output=0.0;</div>
+<div class="line"> <span class="keywordtype">int</span> i=0;</div>
+<div class="line"> </div>
+<div class="line"> <span class="comment">// 自作関数</span></div>
+<div class="line"><span class="comment"></span> <span class="comment">// 割り込みで呼び出される関数</span></div>
+<div class="line"> <span class="keywordtype">void</span> pidCallback(){</div>
+<div class="line">    ++i;</div>
+<div class="line">    sinWave=std::sin(i/10.0);</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// 計算させる(sin波にinputの値を追従させる制御)</span></div>
+<div class="line">    output = pid.calculate(target, input);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// ArduinoIDEのシリアルプロッタで補正できているか値を確認</span></div>
+<div class="line">    serial.printf(<span class="stringliteral">&quot;%lf,%lf,%lf,%lf,\n&quot;</span>, sinWave, input, output + input,output);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// 揺らぎを加える</span></div>
+<div class="line">    input += output + ((std::sin((i / 6.0) + M_PI_4) / 2.0) + 0.05);</div>
+<div class="line"> }</div>
+<div class="line"> </div>
+<div class="line"> <span class="comment">// メイン関数</span></div>
+<div class="line"><span class="comment"></span> <span class="keywordtype">int</span> main(){</div>
+<div class="line">  <span class="comment">// 初期化</span></div>
+<div class="line">    <span class="comment">// 割り込みを設定</span></div>
+<div class="line">    ticker.attach(pidCallback, 0.05);</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// メインループ</span></div>
+<div class="line">    <span class="keywordflow">while</span>(1){</div>
+<div class="line">        ;</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line"> }</div>
+</div><!-- fragment --> </div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a481661f6b62d13985115d414d003a43a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a481661f6b62d13985115d414d003a43a">&#9670;&nbsp;</a></span>PidController()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ctrl::PidController::PidController </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>kp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>ki</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>kd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>max_output_value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>attach_period_s</em> = <code>0.0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>コンストラクタ (割り込み使用時はこちらを使う) </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">kp</td><td>比例成分の係数 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ki</td><td>積分成分の係数 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">kd</td><td>微分成分の係数 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">max_output_value</td><td>出力の最大値 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">attach_period_s</td><td>メンバ関数<code>calculate</code>の割り込み周期. 単位は秒 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a4c68d16e7e6ab7b910bcb83b3df82eb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c68d16e7e6ab7b910bcb83b3df82eb7">&#9670;&nbsp;</a></span>calculate() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ctrl::PidController::calculate </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>targetValue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>inputValue</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PIDの計算を呼び出す関数 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">targetValue</td><td>目標値 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">inputValue</td><td>入力値 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>出力値 </dd></dl>
+
+</div>
+</div>
+<a id="a57f61b8d3056e6da59bade72a10d5882"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57f61b8d3056e6da59bade72a10d5882">&#9670;&nbsp;</a></span>calculate() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ctrl::PidController::calculate </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>targetValue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>inputValue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>attach_period_s</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>PIDの計算を呼び出す関数(割り込みを場合はこちらを使用すること) </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">targetValue</td><td>目標値 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">inputValue</td><td>入力値 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">max_output_value</td><td>前回のこのメンバ関数読み出して今回の処理までかかった時間幅 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>出力値 </dd></dl>
+
+</div>
+</div>
+<a id="a465867cbf39f94fef5e99abd4d503e56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a465867cbf39f94fef5e99abd4d503e56">&#9670;&nbsp;</a></span>setAttachPeriodS()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ctrl::PidController::setAttachPeriodS </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>attach_period_s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>擬似的に積分をするための使う時間を指定する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">attach_period_s</td><td>秒が基準です </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9bbcad616ae73bc960ea853712e59304"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bbcad616ae73bc960ea853712e59304">&#9670;&nbsp;</a></span>setCoefficient()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ctrl::PidController::setCoefficient </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>coefficient</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>selector</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>PIDの各係数を変更できる </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">inputValue</td><td>変更値 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">setting</td><td>ここに, KP, KI, KD を指定してどの係数か選ぶ </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a839b674215e3c78a2707c29570efbbf0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a839b674215e3c78a2707c29570efbbf0">&#9670;&nbsp;</a></span>setMaxOutputValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ctrl::PidController::setMaxOutputValue </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>max_output_value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>出力値の最大値を変更 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">max_output_value</td><td>変更したい値を指定する </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>C:/RoboconMachineControlLibrary/Ctrl/<a class="el" href="_pid_controller_8hpp_source.html">PidController.hpp</a></li>
+<li>C:/RoboconMachineControlLibrary/Ctrl/<a class="el" href="_pid_controller_8cpp.html">PidController.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<div class="ttc" id="a_ctrl_8hpp_html"><div class="ttname"><a href="_ctrl_8hpp.html">Ctrl.hpp</a></div></div>
+<div class="ttc" id="a_pid_controller_8hpp_html"><div class="ttname"><a href="_pid_controller_8hpp.html">PidController.hpp</a></div></div>
+<div class="ttc" id="aclassctrl_1_1_pid_controller_html"><div class="ttname"><a href="classctrl_1_1_pid_controller.html">ctrl::PidController</a></div><div class="ttdoc">PID制御クラス</div><div class="ttdef"><b>Definition:</b> PidController.hpp:84</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.16
+</small></address>
+</body>
+</html>

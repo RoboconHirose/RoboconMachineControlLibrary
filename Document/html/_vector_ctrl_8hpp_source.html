@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.16"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>RoboconMachineControlLibrary: C:/RoboconMachineControlLibrary/Ctrl/VectorCtrl.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">RoboconMachineControlLibrary
+   &#160;<span id="projectnumber">v0.1-alpha</span>
+   </div>
+   <div id="projectbrief">ロボコンの制御ライブラリ</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.16 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_8d46e73f736d1906b087e16bc0a272c2.html">RoboconMachineControlLibrary</a></li><li class="navelem"><a class="el" href="dir_a22345e818ab00b29405395dee697d57.html">Ctrl</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">VectorCtrl.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_vector_ctrl_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">// Created by Mayoi on 2019/08/18.</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef VECTORCTRL_VECTOR_HPP</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define VECTORCTRL_VECTOR_HPP</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">/*///////////////////////////////////////////////</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * 自作ライブラリは Ctrl ネームスペース内に収める</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * //////////////////////////////////////////////</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="_vector_ctrl_8hpp.html#a67c87735b6c91874ecaf6e2601d3ec40">   23</a></span>&#160;<span class="preprocessor">#define STEER_LIMIT 1.0</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="_vector_ctrl_8hpp.html#a5a12800a69a30e901f81666580dff258">   28</a></span>&#160;<span class="preprocessor">#define SQUARE_ROOT_2 1.41421356</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="_vector_ctrl_8hpp.html#a002b2f4894492820fe708b1b7e7c5e70">   33</a></span>&#160;<span class="preprocessor">#define EPSILON 0.05</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacectrl.html">ctrl</a> {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">extern</span> <span class="keywordtype">double</span> <a class="code" href="namespacectrl.html#a596216599d8b288ccfe17a4398e67a22">normalize</a>(<span class="keywordtype">double</span> target, <span class="keywordtype">double</span> min, <span class="keywordtype">double</span> max, <span class="keywordtype">double</span> center);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classctrl_1_1_vector.html">   58</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classctrl_1_1_vector.html">Vector</a> {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="classctrl_1_1_vector.html#a4c1f1973984a9dabdf3f29a67552c046">Vector</a>();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="classctrl_1_1_vector.html#a394c8e2deb31a7033d4b3a22125c8d27">getAngle</a>();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="classctrl_1_1_vector.html#ad3b19e55e468eb79495a3537091674b4">getMagnitude</a>();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classctrl_1_1_vector.html#a93b1738277a94757c7853b75a23ac636">setAngle</a>(<span class="keywordtype">double</span> angle);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classctrl_1_1_vector.html#a998b84035fef579084b869a1ec07de22">setMagnitude</a>(<span class="keywordtype">double</span> magnitude);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordtype">double</span> angle;   <span class="comment">// ラジアン</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordtype">double</span> magnitude; <span class="comment">// ベクトルの長さ</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    };</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="classctrl_1_1_vector_move.html">  101</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classctrl_1_1_vector_move.html">VectorMove</a> final : <span class="keyword">private</span> <a class="code" href="classctrl_1_1_vector.html">ctrl::Vector</a> {</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <a class="code" href="classctrl_1_1_vector_move.html#aad0dde8e78d69429e0d0780560a60ba8">VectorMove</a>();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classctrl_1_1_vector_move.html#ad0744db1d9b9bf1d909f647ace5d93f8">getAngle</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classctrl_1_1_vector_move.html#a8ad1c10b95e5eff7e3bdf136ae64d59d">getMagnitude</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classctrl_1_1_vector_move.html#a90afe17836e7008bc4fe810592861e07">getSteer</a>();</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classctrl_1_1_vector_move.html#a55395c3588faa7cae53e41b0cf2494b4">setAngle</a>(<span class="keywordtype">double</span> angle) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classctrl_1_1_vector_move.html#afa98995fab355251e82d306859886df4">setMagnitude</a>(<span class="keywordtype">double</span> magnitude) <span class="keyword">override</span>; <span class="comment">// (0~1.4)の範囲で指定</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classctrl_1_1_vector_move.html#aece34325ba3ad4f9969902a385503cba">setSteer</a>(<span class="keywordtype">double</span> steer); <span class="comment">// (-1.0~1.0)の範囲で指定</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="keywordtype">double</span> steer;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    };</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00159"></a><span class="lineno"><a class="line" href="classctrl_1_1_wheel_attr.html">  159</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classctrl_1_1_wheel_attr.html">WheelAttr</a> {</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;        <a class="code" href="classctrl_1_1_wheel_attr.html#afed1f74010d461120214d2dca007996d">WheelAttr</a>();</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classctrl_1_1_wheel_attr.html#a6712f9666647a1259713170ebc8b36c1">getX</a>();</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classctrl_1_1_wheel_attr.html#af1532ffe7d091ec1e369e49498b6e707">getY</a>();</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classctrl_1_1_wheel_attr.html#a116a62f7826e88c910987f7d6ffb7ca8">getAngle</a>();</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classctrl_1_1_wheel_attr.html#a1cbb3c8327b590c9687f5a182c145fde">getWheelDist</a>();</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classctrl_1_1_wheel_attr.html#a7952bf871a24fbd9ac6e3a841cb029e6">setX</a>(<span class="keywordtype">double</span> x);</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classctrl_1_1_wheel_attr.html#a61f872622437e8760d82f2eecda7c35e">setY</a>(<span class="keywordtype">double</span> y);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classctrl_1_1_wheel_attr.html#ae88b3a5892b66fd42519bcebf4039038">setAngle</a>(<span class="keywordtype">double</span> angle);</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        <span class="keywordtype">double</span> x;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <span class="keywordtype">double</span> y;</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        <span class="keywordtype">double</span> angle;</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    };</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
+<div class="line"><a name="l00220"></a><span class="lineno"><a class="line" href="classctrl_1_1_vector_calculator.html">  220</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classctrl_1_1_vector_calculator.html">VectorCalculator</a> {</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        <a class="code" href="classctrl_1_1_vector_calculator.html#af556a244caf7ba660c6cde9c8147af6b">VectorCalculator</a>();</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="classctrl_1_1_vector_calculator.html#af556a244caf7ba660c6cde9c8147af6b">VectorCalculator</a>(<span class="keywordtype">double</span> offset);</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160; </div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classctrl_1_1_vector_calculator.html#ae9fb47ab482333e0c1baab53e8ff8d5b">setOffset</a>(<span class="keywordtype">double</span> offset);</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classctrl_1_1_vector_calculator.html#aa6ceeaf0ecddc30f4ff7c7651ff0af99">calculateVector</a>(<a class="code" href="classctrl_1_1_vector.html">ctrl::Vector</a> &amp;vectorWheel, <a class="code" href="classctrl_1_1_vector_move.html">ctrl::VectorMove</a> &amp;vectorMove, <a class="code" href="classctrl_1_1_wheel_attr.html">ctrl::WheelAttr</a> &amp;wheelAttr);</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        <span class="keywordtype">double</span> steerR;  <span class="comment">// 基準位置からの旋回半径</span></div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;        <span class="keywordtype">double</span> turnR;   <span class="comment">// 車両原点位置での旋回半径</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        <span class="keywordtype">double</span> turnSpeed; <span class="comment">// 車両原点位置での旋回速度</span></div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <span class="keywordtype">double</span> cAngle;   <span class="comment">// 旋回中心が位置する直線の角度</span></div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        <span class="keywordtype">double</span> cx;      <span class="comment">// 旋回中心座標</span></div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        <span class="keywordtype">double</span> cy;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        <span class="keywordtype">double</span> vAngle; <span class="comment">// 旋回中心からホイール位置への角度</span></div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        <span class="keywordtype">double</span> vx;    <span class="comment">// 旋回中心からホイール位置への相対座標</span></div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        <span class="keywordtype">double</span> vy;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        <span class="keywordtype">double</span> speedFact; <span class="comment">//</span></div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <span class="keywordtype">double</span> offset; <span class="comment">//  車両原点の調整(前+, 後-)</span></div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    };</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;}</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="preprocessor">#endif //VECTORCTRL_VECTOR_HPP</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassctrl_1_1_wheel_attr_html_afed1f74010d461120214d2dca007996d"><div class="ttname"><a href="classctrl_1_1_wheel_attr.html#afed1f74010d461120214d2dca007996d">ctrl::WheelAttr::WheelAttr</a></div><div class="ttdeci">WheelAttr()</div><div class="ttdoc">デフォルトコンストラクタ</div><div class="ttdef"><b>Definition:</b> VectorCtrl.cpp:82</div></div>
+<div class="ttc" id="aclassctrl_1_1_vector_html_ad3b19e55e468eb79495a3537091674b4"><div class="ttname"><a href="classctrl_1_1_vector.html#ad3b19e55e468eb79495a3537091674b4">ctrl::Vector::getMagnitude</a></div><div class="ttdeci">virtual double getMagnitude()</div><div class="ttdoc">アクセサー</div><div class="ttdef"><b>Definition:</b> VectorCtrl.cpp:29</div></div>
+<div class="ttc" id="aclassctrl_1_1_wheel_attr_html_a6712f9666647a1259713170ebc8b36c1"><div class="ttname"><a href="classctrl_1_1_wheel_attr.html#a6712f9666647a1259713170ebc8b36c1">ctrl::WheelAttr::getX</a></div><div class="ttdeci">double getX()</div><div class="ttdoc">アクセサー</div><div class="ttdef"><b>Definition:</b> VectorCtrl.cpp:86</div></div>
+<div class="ttc" id="aclassctrl_1_1_wheel_attr_html"><div class="ttname"><a href="classctrl_1_1_wheel_attr.html">ctrl::WheelAttr</a></div><div class="ttdoc">ホイールの位置を指定するクラス</div><div class="ttdef"><b>Definition:</b> VectorCtrl.hpp:159</div></div>
+<div class="ttc" id="aclassctrl_1_1_vector_html"><div class="ttname"><a href="classctrl_1_1_vector.html">ctrl::Vector</a></div><div class="ttdoc">ベクトル量を保持するクラス</div><div class="ttdef"><b>Definition:</b> VectorCtrl.hpp:58</div></div>
+<div class="ttc" id="aclassctrl_1_1_vector_html_a394c8e2deb31a7033d4b3a22125c8d27"><div class="ttname"><a href="classctrl_1_1_vector.html#a394c8e2deb31a7033d4b3a22125c8d27">ctrl::Vector::getAngle</a></div><div class="ttdeci">virtual double getAngle()</div><div class="ttdoc">アクセサー</div><div class="ttdef"><b>Definition:</b> VectorCtrl.cpp:25</div></div>
+<div class="ttc" id="aclassctrl_1_1_wheel_attr_html_ae88b3a5892b66fd42519bcebf4039038"><div class="ttname"><a href="classctrl_1_1_wheel_attr.html#ae88b3a5892b66fd42519bcebf4039038">ctrl::WheelAttr::setAngle</a></div><div class="ttdeci">void setAngle(double angle)</div><div class="ttdoc">アクセサー</div><div class="ttdef"><b>Definition:</b> VectorCtrl.cpp:110</div></div>
+<div class="ttc" id="aclassctrl_1_1_vector_calculator_html"><div class="ttname"><a href="classctrl_1_1_vector_calculator.html">ctrl::VectorCalculator</a></div><div class="ttdoc">各ホイールの移動ベクトルを算出するクラス</div><div class="ttdef"><b>Definition:</b> VectorCtrl.hpp:220</div></div>
+<div class="ttc" id="aclassctrl_1_1_vector_calculator_html_aa6ceeaf0ecddc30f4ff7c7651ff0af99"><div class="ttname"><a href="classctrl_1_1_vector_calculator.html#aa6ceeaf0ecddc30f4ff7c7651ff0af99">ctrl::VectorCalculator::calculateVector</a></div><div class="ttdeci">void calculateVector(ctrl::Vector &amp;vectorWheel, ctrl::VectorMove &amp;vectorMove, ctrl::WheelAttr &amp;wheelAttr)</div><div class="ttdoc">移動ベクトルを駆動ベクトルに変換</div><div class="ttdef"><b>Definition:</b> VectorCtrl.cpp:134</div></div>
+<div class="ttc" id="aclassctrl_1_1_vector_move_html_a90afe17836e7008bc4fe810592861e07"><div class="ttname"><a href="classctrl_1_1_vector_move.html#a90afe17836e7008bc4fe810592861e07">ctrl::VectorMove::getSteer</a></div><div class="ttdeci">double getSteer()</div><div class="ttdoc">アクセサー</div><div class="ttdef"><b>Definition:</b> VectorCtrl.cpp:55</div></div>
+<div class="ttc" id="aclassctrl_1_1_vector_html_a4c1f1973984a9dabdf3f29a67552c046"><div class="ttname"><a href="classctrl_1_1_vector.html#a4c1f1973984a9dabdf3f29a67552c046">ctrl::Vector::Vector</a></div><div class="ttdeci">Vector()</div><div class="ttdoc">デフォルトコンストラクタ</div><div class="ttdef"><b>Definition:</b> VectorCtrl.cpp:22</div></div>
+<div class="ttc" id="aclassctrl_1_1_vector_move_html_aad0dde8e78d69429e0d0780560a60ba8"><div class="ttname"><a href="classctrl_1_1_vector_move.html#aad0dde8e78d69429e0d0780560a60ba8">ctrl::VectorMove::VectorMove</a></div><div class="ttdeci">VectorMove()</div><div class="ttdoc">デフォルトコンストラクタ</div><div class="ttdef"><b>Definition:</b> VectorCtrl.cpp:43</div></div>
+<div class="ttc" id="aclassctrl_1_1_wheel_attr_html_a116a62f7826e88c910987f7d6ffb7ca8"><div class="ttname"><a href="classctrl_1_1_wheel_attr.html#a116a62f7826e88c910987f7d6ffb7ca8">ctrl::WheelAttr::getAngle</a></div><div class="ttdeci">double getAngle()</div><div class="ttdoc">アクセサー</div><div class="ttdef"><b>Definition:</b> VectorCtrl.cpp:94</div></div>
+<div class="ttc" id="aclassctrl_1_1_vector_move_html_ad0744db1d9b9bf1d909f647ace5d93f8"><div class="ttname"><a href="classctrl_1_1_vector_move.html#ad0744db1d9b9bf1d909f647ace5d93f8">ctrl::VectorMove::getAngle</a></div><div class="ttdeci">double getAngle() override</div><div class="ttdoc">アクセサー</div><div class="ttdef"><b>Definition:</b> VectorCtrl.cpp:47</div></div>
+<div class="ttc" id="aclassctrl_1_1_wheel_attr_html_a61f872622437e8760d82f2eecda7c35e"><div class="ttname"><a href="classctrl_1_1_wheel_attr.html#a61f872622437e8760d82f2eecda7c35e">ctrl::WheelAttr::setY</a></div><div class="ttdeci">void setY(double y)</div><div class="ttdoc">アクセサー</div><div class="ttdef"><b>Definition:</b> VectorCtrl.cpp:106</div></div>
+<div class="ttc" id="aclassctrl_1_1_vector_html_a93b1738277a94757c7853b75a23ac636"><div class="ttname"><a href="classctrl_1_1_vector.html#a93b1738277a94757c7853b75a23ac636">ctrl::Vector::setAngle</a></div><div class="ttdeci">virtual void setAngle(double angle)</div><div class="ttdoc">アクセサー</div><div class="ttdef"><b>Definition:</b> VectorCtrl.cpp:33</div></div>
+<div class="ttc" id="anamespacectrl_html"><div class="ttname"><a href="namespacectrl.html">ctrl</a></div><div class="ttdoc">制御ライブラリ用ネームスペース</div><div class="ttdef"><b>Definition:</b> MecanumWheelController.hpp:12</div></div>
+<div class="ttc" id="anamespacectrl_html_a596216599d8b288ccfe17a4398e67a22"><div class="ttname"><a href="namespacectrl.html#a596216599d8b288ccfe17a4398e67a22">ctrl::normalize</a></div><div class="ttdeci">double normalize(double target, double min, double max, double center)</div><div class="ttdoc">正規化 値を-1から1の範囲に変換する</div><div class="ttdef"><b>Definition:</b> VectorCtrl.cpp:9</div></div>
+<div class="ttc" id="aclassctrl_1_1_vector_move_html_aece34325ba3ad4f9969902a385503cba"><div class="ttname"><a href="classctrl_1_1_vector_move.html#aece34325ba3ad4f9969902a385503cba">ctrl::VectorMove::setSteer</a></div><div class="ttdeci">void setSteer(double steer)</div><div class="ttdoc">アクセサー</div><div class="ttdef"><b>Definition:</b> VectorCtrl.cpp:71</div></div>
+<div class="ttc" id="aclassctrl_1_1_vector_html_a998b84035fef579084b869a1ec07de22"><div class="ttname"><a href="classctrl_1_1_vector.html#a998b84035fef579084b869a1ec07de22">ctrl::Vector::setMagnitude</a></div><div class="ttdeci">virtual void setMagnitude(double magnitude)</div><div class="ttdoc">アクセサー</div><div class="ttdef"><b>Definition:</b> VectorCtrl.cpp:37</div></div>
+<div class="ttc" id="aclassctrl_1_1_vector_calculator_html_af556a244caf7ba660c6cde9c8147af6b"><div class="ttname"><a href="classctrl_1_1_vector_calculator.html#af556a244caf7ba660c6cde9c8147af6b">ctrl::VectorCalculator::VectorCalculator</a></div><div class="ttdeci">VectorCalculator()</div><div class="ttdoc">デフォルトコンストラクタ</div><div class="ttdef"><b>Definition:</b> VectorCtrl.cpp:120</div></div>
+<div class="ttc" id="aclassctrl_1_1_vector_move_html_a55395c3588faa7cae53e41b0cf2494b4"><div class="ttname"><a href="classctrl_1_1_vector_move.html#a55395c3588faa7cae53e41b0cf2494b4">ctrl::VectorMove::setAngle</a></div><div class="ttdeci">void setAngle(double angle) override</div><div class="ttdoc">アクセサー</div><div class="ttdef"><b>Definition:</b> VectorCtrl.cpp:59</div></div>
+<div class="ttc" id="aclassctrl_1_1_wheel_attr_html_a1cbb3c8327b590c9687f5a182c145fde"><div class="ttname"><a href="classctrl_1_1_wheel_attr.html#a1cbb3c8327b590c9687f5a182c145fde">ctrl::WheelAttr::getWheelDist</a></div><div class="ttdeci">double getWheelDist()</div><div class="ttdoc">アクセサー</div><div class="ttdef"><b>Definition:</b> VectorCtrl.cpp:98</div></div>
+<div class="ttc" id="aclassctrl_1_1_wheel_attr_html_af1532ffe7d091ec1e369e49498b6e707"><div class="ttname"><a href="classctrl_1_1_wheel_attr.html#af1532ffe7d091ec1e369e49498b6e707">ctrl::WheelAttr::getY</a></div><div class="ttdeci">double getY()</div><div class="ttdoc">アクセサー</div><div class="ttdef"><b>Definition:</b> VectorCtrl.cpp:90</div></div>
+<div class="ttc" id="aclassctrl_1_1_vector_move_html_a8ad1c10b95e5eff7e3bdf136ae64d59d"><div class="ttname"><a href="classctrl_1_1_vector_move.html#a8ad1c10b95e5eff7e3bdf136ae64d59d">ctrl::VectorMove::getMagnitude</a></div><div class="ttdeci">double getMagnitude() override</div><div class="ttdoc">アクセサー</div><div class="ttdef"><b>Definition:</b> VectorCtrl.cpp:51</div></div>
+<div class="ttc" id="aclassctrl_1_1_vector_move_html"><div class="ttname"><a href="classctrl_1_1_vector_move.html">ctrl::VectorMove</a></div><div class="ttdoc">移動ベクトルを保持するクラス</div><div class="ttdef"><b>Definition:</b> VectorCtrl.hpp:101</div></div>
+<div class="ttc" id="aclassctrl_1_1_wheel_attr_html_a7952bf871a24fbd9ac6e3a841cb029e6"><div class="ttname"><a href="classctrl_1_1_wheel_attr.html#a7952bf871a24fbd9ac6e3a841cb029e6">ctrl::WheelAttr::setX</a></div><div class="ttdeci">void setX(double x)</div><div class="ttdoc">アクセサー</div><div class="ttdef"><b>Definition:</b> VectorCtrl.cpp:102</div></div>
+<div class="ttc" id="aclassctrl_1_1_vector_move_html_afa98995fab355251e82d306859886df4"><div class="ttname"><a href="classctrl_1_1_vector_move.html#afa98995fab355251e82d306859886df4">ctrl::VectorMove::setMagnitude</a></div><div class="ttdeci">void setMagnitude(double magnitude) override</div><div class="ttdoc">アクセサー</div><div class="ttdef"><b>Definition:</b> VectorCtrl.cpp:63</div></div>
+<div class="ttc" id="aclassctrl_1_1_vector_calculator_html_ae9fb47ab482333e0c1baab53e8ff8d5b"><div class="ttname"><a href="classctrl_1_1_vector_calculator.html#ae9fb47ab482333e0c1baab53e8ff8d5b">ctrl::VectorCalculator::setOffset</a></div><div class="ttdeci">virtual void setOffset(double offset)</div><div class="ttdoc">オフセットの設定</div><div class="ttdef"><b>Definition:</b> VectorCtrl.cpp:130</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.16
+</small></address>
+</body>
+</html>
