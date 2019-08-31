@@ -1,5 +1,5 @@
 /**
- * @file MecanumWheel.hpp
+ * @file MecanumWheelController.hpp
  */
 
 #ifndef VECTORCTRL_MECANUMWHEEL_HPP

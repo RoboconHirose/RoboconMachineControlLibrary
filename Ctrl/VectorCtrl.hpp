@@ -35,7 +35,7 @@
 
 /**
  * @namespace ctrl
- * @brief 制御ライブライ用ネームスペース
+ * @brief 制御ライブラリ用ネームスペース
  * @details 制御系のコードを書くときは ctrl ネームスペースに属するようにすること
  */
 namespace ctrl {

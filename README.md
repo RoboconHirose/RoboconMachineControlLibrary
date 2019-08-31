@@ -10,12 +10,13 @@
 - [サンプルコード](#サンプルコード)
     - [PID制御を使う](#PID制御を使う)
     - [メカナムを動かす](#メカナムを動かす)
+    - [ナビゲーターを使う](#ナビゲーターを使う)
 - [ドキュメント](#ドキュメント)
-    - [ライブラリを使う人向け](#ライブラリを使う)
+    - [ライブラリを使う](#ライブラリを使う)
+        - [PidController](#PidController)
         - [MecanumWheelController](#MecanumWheelController)
         - [VectorMove](#VectorMove)
-        - [PidController](#PidController)
-    - [ライブラリを作る人向け](#ライブラリを使う)
+    - [ライブラリを作る](#ライブラリを作る)
         - [Vector](#Vector)
         - [WheelAttr](#WheelAttr)
         - [VectorCalculator](#VectorCalculator)
@@ -65,9 +66,59 @@ or
 $ git clone https://github.com/Agatsuma854/RoboconMachineControlLibrary.git
 ```
 
-そして開発する. バグや誤字を発見した場合はプルリクエストを出していただけるとありがたい
+そして開発する. バグや誤字を発見した場合はプルリクエストを出していただけるとありがたい  
 
-# License
+# サンプルコード
+
+### PID制御を使う  
+
+```cpp  
+// 工事中
+```  
+
+### メカナムを動かす
+
+```cpp  
+// 工事中
+```
+
+### ナビゲーターを使う  
+
+```cpp
+// 工事中
+```
+
+#ドキュメント  
+
+## ライブラリを使う  
+
+### PidController  
+
+### MecanumWheelController  
+
+### VectorMove  
+
+## ライブラリを作る  
+
+### Vector  
+
+### WheelAttr  
+
+### VectorCalculator  
+
+# Q&A  
+
+### これが使える環境は?  
+
+C++14以上の環境であればどこでも
+
+### 速度が出ない  
+
+お使いのマイコンはdoubleがた
+
+### これ作った作者と直接話したい  
+
+# License  
 
 まだ正式リリースではないから保留. (一部ファイルを除きGNU AGPLにしようか検討中)
 
@@ -75,3 +126,4 @@ $ git clone https://github.com/Agatsuma854/RoboconMachineControlLibrary.git
 
 Agatsuma854  
 email : s1701002@semdai-nct.jp  
+Twitter : @oserobo2221  

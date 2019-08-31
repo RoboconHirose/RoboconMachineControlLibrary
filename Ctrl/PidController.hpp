@@ -2,6 +2,10 @@
 // Created by agatsuma on 19/04/09.
 //
 
+/**
+ * @file PidController.hpp
+ */
+
 #ifndef MYSTEERING_PIDCONTROLLER_HPP
 #define MYSTEERING_PIDCONTROLLER_HPP
 
@@ -12,6 +16,7 @@ namespace ctrl {
 	const int KD = 2;
 
 	/**
+	 * @brief PID制御クラス
 	 *
 	 * Example:
 	 * @code
