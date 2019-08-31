@@ -50,11 +50,11 @@
 
 ## ライブラリを使いたい
 
-初めに[リリース](https://github.com/Agatsuma854/RoboconMachineControlLibrary/releases)の最新のライブラリをダウンロードします  
+初めに[リリース](https://github.com/Agatsuma854/RoboconMachineControlLibrary/releases)の最新のライブラリをダウンロードする  
 
 次に`RoboconMachineControlLibrary-XX`を解凍し中にある`Ctrl`フォルダをコピーし自分がコードを書いているフォルダに貼り付ける  
 
-コピーしたらライブラリを使用したいソースコードの上部で`Ctrl/Ctrl.hpp`と記述しライブラリ群をインクルードする  
+コピーしたらライブラリを使用したいソースコードの上部で`#include "Ctrl/Ctrl.hpp"`と記述しライブラリ群をインクルードする  
 
 ## ライブラリを改良,開発したい  
 
@@ -68,7 +68,9 @@ or
 $ git clone https://github.com/Agatsuma854/RoboconMachineControlLibrary.git
 ```
 
-そして開発する. バグや誤字を発見した場合はプルリクエストを出していただけるとありがたい  
+そして開発する  
+
+バグや誤字を発見した場合はプルリクエストを出していただけるとありがたいです  
 
 # サンプルコード
 
@@ -129,7 +131,7 @@ Doxygen版はGitHubで表示するとHTMLの生のコードが見えてしまう
 
 ### これが使える環境は?  
 
-C++14以上の環境であればどこでも
+C++14以上の環境であればどこでも使えます
 
 ### 速度が出ない  
 
@@ -141,7 +143,7 @@ C++14以上の環境であればどこでも
 
 # License  
 
-まだ正式リリースではないから保留. (一部ファイルを除きGNU GPLv3にしようか検討中)
+まだ正式リリースではないから保留中. (一部ファイルを除きGNU GPLv3にしようか検討中)
 
 # Author
 
