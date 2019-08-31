@@ -50,9 +50,9 @@
 
 ## ライブラリを使いたい
 
-初めに[このページ](https://github.com/Agatsuma854/RoboconMachineControlLibrary)の`Clone or download`をクリックし`Download ZIP`を選択してダウンロード  
+初めに[リリース](https://github.com/Agatsuma854/RoboconMachineControlLibrary/releases)の最新のライブラリをダウンロードします  
 
-次に`RoboconMachineControlLibrary`を解凍し中にある`Ctrl`フォルダをコピーし自分がコードを書いているフォルダに貼り付ける  
+次に`RoboconMachineControlLibrary-XX`を解凍し中にある`Ctrl`フォルダをコピーし自分がコードを書いているフォルダに貼り付ける  
 
 コピーしたらライブラリを使用したいソースコードの上部で`Ctrl/Ctrl.hpp`と記述しライブラリ群をインクルードする  
 
@@ -88,11 +88,13 @@ $ git clone https://github.com/Agatsuma854/RoboconMachineControlLibrary.git
 
 ```cpp
 // 工事中
-```
+```  
 
 #ドキュメント  
 
 ## ライブラリを使う  
+
+Doxygen版はGitHubで表示するとHTMLの生のコードが見えてしまうのでダウンロードしてから見てください
 
 ### PidController  
 
