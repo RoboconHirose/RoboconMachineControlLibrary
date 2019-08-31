@@ -92,9 +92,9 @@ $ git clone https://github.com/Agatsuma854/RoboconMachineControlLibrary.git
 
 #ドキュメント  
 
-## ライブラリを使う  
+Doxygen版はGitHubで表示するとHTMLの生のコードが見えてしまうのでダウンロードしてから見てください  
 
-Doxygen版はGitHubで表示するとHTMLの生のコードが見えてしまうのでダウンロードしてから見てください
+## ライブラリを使う  
 
 ### PidController  
 
